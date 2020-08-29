@@ -1,0 +1,50 @@
+.img-left {
+    float: left;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+.img-right {
+    float: right;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+/* ================ Header =============== */
+.home-banner .home-header-banner {
+    width: 100%;
+    height: auto;
+}
+
+.home-menu .navbar-collapse-custom {
+    padding-right: 0;
+    padding-left: 0;
+    background-color: #01a453;
+}
+
+.home-menu .navbar-default-custom {
+    margin-bottom: 0;
+}
+
+.home-menu .container-fluid-custom {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.home-menu .navbar-brand-custom {
+    display: none;
+}
+
+.home-menu .navbar-default ul .active-custom {
+    background-color: #ffffff;
+}
+
+.home-menu .navbar-default ul li a {
+    color: #ffffff;
+}
+
+.home-menu .navbar-default ul .active-custom a {
+    color: #01a453;
+}
