@@ -1,17 +1,23 @@
 .img-left {
-    float: left;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
+    position: fixed;
+    left: 0;
+}
+
+.img-left img {
+    position: fixed;
+    left: 5%;
+    top: 25%;
 }
 
 .img-right {
-    float: right;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
+    position: fixed;
 }
 
+.img-right img {
+    position: fixed;
+    right: 5%;
+    top: 25%;
+}
 /* ================ Header =============== */
 .home-banner .home-header-banner {
     width: 100%;
