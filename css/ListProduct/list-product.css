@@ -1,0 +1,11 @@
+.wrap-pagination {
+    margin-bottom: 30px;
+}
+
+.wrap-slider .wrap-item {
+    padding: 0 15px;
+}
+
+.wrap-pagination .pagination-custom {
+    float: right;;
+}
