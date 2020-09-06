@@ -37,7 +37,40 @@
 		<div class="container">
     	<div class="header">
 			<div class="home-banner">
-				<img src="<?php bloginfo('template_url'); ?>/assets/img/common/img_header.jpg" alt="" class="home-header-banner">
+			<div class="row wrap-banner">
+				<div class="col-md-2">
+					<div class="header-logo">
+						<img src="<?php bloginfo('template_url'); ?>/assets/img/common/img_logo.png" alt="">
+					</div>
+				</div>
+				
+				<div class="col-md-7">
+					<div class="banner-info">
+
+						<div class="banner-title">
+							<h2>CÔNG TY TNHH NỘI THẤT LIÊN KẾT HD</h2>
+						</div>
+
+						<div class="bannrer-text-red">
+							<h1 class="text-outline">NỘI THẤT HD</h1>
+						</div>
+
+						<div class="wrap-banner-phone">
+							<span><span><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_phone.png" alt=""></span><span class="phone-text">070822000</span></span>
+						</div>
+
+						<div class="wrap-banner-address">
+							<span><span ><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_address.png" alt=""></span><span class="address-text">86 CHU VĂN AN - P.26 - BÌNH THẠNH</span></span>
+						</div>
+						
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="banner-search">
+						<div class="text-search"><input type="text" placeholder="Tìm kiếm"></div>
+						<div class="button-search"><button>Tìm</button></div>
+					</div>
+				</div>
 			</div>
 			<div class="home-menu">
 				<nav class="navbar navbar-default navbar-default-custom">
@@ -55,15 +88,42 @@
 					<div id="navbar" class="navbar-collapse collapse navbar-collapse-custom" aria-expanded="false"
 					style="height: 1px;">
 					<ul class="nav navbar-nav ">
-						<li class="active-custom"><a href="#">Trang Chủ</a></li>
-						<li><a href="#">Sàn Gỗ</a></li>
-						<li><a href="#">Sàn Nhựa</a></li>
-						<li><a href="#">Giấy Dán Tường</a></li>
-						<li><a href="#">Tấm Nhựa PVC</a></li>
-						<li><a href="#">Lam Gỗ</a></li>
-						<li><a href="#">Làm Sóng</a></li>
-						<li><a href="#">Thiết kế</a></li>
-						<li><a href="#">Thi Công</a></li>
+
+
+					<?php
+					if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
+						?>
+
+							
+
+								<?php
+								if ( has_nav_menu( 'primary' ) ) {
+
+									wp_nav_menu(
+										array(
+											'container'  => '',
+											'items_wrap' => '%3$s',
+											'theme_location' => 'primary',
+										)
+									);
+
+								} elseif ( ! has_nav_menu( 'expanded' ) ) {
+
+									wp_list_pages(
+										array(
+											'match_menu_classes' => true,
+											'show_sub_menu_icons' => true,
+											'title_li' => false,
+											'walker'   => new TwentyTwenty_Walker_Page(),
+										)
+									);
+
+								}
+								
+					}
+
+					?>		
+						
 					</ul>
 					</div>
 				</nav>
