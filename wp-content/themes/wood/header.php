@@ -38,13 +38,13 @@
     	<div class="header">
 			<div class="home-banner">
 			<div class="row wrap-banner">
-				<div class="col-md-2">
+				<div class="col-md-2 col-sm-2 col-xs-12">
 					<div class="header-logo">
 						<img src="<?php bloginfo('template_url'); ?>/assets/img/common/img_logo.png" alt="">
 					</div>
 				</div>
 				
-				<div class="col-md-7">
+				<div class="col-md-7 col-sm-7 col-xs-12">
 					<div class="banner-info">
 
 						<div class="banner-title">
@@ -65,7 +65,7 @@
 						
 					</div>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-3 col-xs-12">
 					<div class="banner-search">
 						<div class="text-search"><input type="text" placeholder="Tìm kiếm"></div>
 						<div class="button-search"><button>Tìm</button></div>

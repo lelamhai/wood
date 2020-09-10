@@ -589,7 +589,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .wrap-image {
-    padding-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .wrap-image img {
@@ -645,6 +645,7 @@ footer {
 
 .wrap-footer .col-footer {
     padding: 15px 30px;
+    text-align: center;
 }
 
 .wrap-image-footer {
@@ -671,7 +672,7 @@ footer {
 }
 
 .wrap-info p {
-    padding: 15px 0;
+    padding: 10px 0;
     font-size: 14px;
 }
 
@@ -697,7 +698,6 @@ footer {
     }
 }
 
-
 /* ==========================================================================
    Responsive CSS Landscape Tablet
    ========================================================================== */
@@ -722,6 +722,34 @@ footer {
    Responsive CSS Landscape Mobile
    ========================================================================== */
  @media only screen and (min-width: 480px) and (max-width: 767px) {
+    .banner-title h2 {
+        font-size: 25px;
+    }
+    
+    .text-outline {
+        font-size: 20px;
+    }
+
+    .wrap-banner-phone {
+        width: 100%;
+    }
+
+    .wrap-banner-address {
+        width: 100%;
+    }
+
+    .phone-text {
+        font-size: 10px;
+    }
+
+    .address-text {
+        font-size: 10px;
+    }
+
+    .container-fluid-custom .navbar-header button {
+        margin-right: 0;
+    }
+
     .home-menu .container-fluid-custom {
         padding-right: 15px !important;
         padding-left: 15px !important;
@@ -760,9 +788,41 @@ footer {
    Responsive CSS Portrait Mobile
    ========================================================================== */
 @media only screen and (min-width: 100px) and (max-width: 479px) {
+
+    .wrap-banner {
+        display: block;
+    }
+
+    .header-logo {
+        text-align: center;
+    }
+
+    .wrap-banner-address {
+        width: 100%;
+    }
+
+    .wrap-banner-phone {
+        width: 100%;
+    }
+
+    .banner-search input {
+        width: 150px;
+    }
+
+    .banner-search {
+        padding-right: 0;
+        float: initial;
+        width: 50%;
+    margin: auto;
+    }
+
     .home-menu .container-fluid-custom {
         padding-right: 15px !important;
         padding-left: 15px !important;
+    }
+
+    .container-fluid-custom .navbar-header button {
+        margin-right: 0;
     }
 
     .home-menu .navbar-collapse-custom  {
@@ -791,4 +851,6 @@ footer {
         padding-left: 30px;
         padding-right: 30px;
     }
+
+
 }

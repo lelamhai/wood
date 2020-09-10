@@ -108,22 +108,13 @@
     width: 100%;
 }
 
-.wrap-form .text-name,
-.wrap-form .text-address,
-.wrap-form .text-number,
-.wrap-form .text-number {
-    padding-bottom: 15px;
-}
-
-.wrap-form .text-name input,
-.wrap-form .text-address input,
-.wrap-form .text-number input,
-.wrap-form .text-number textarea {
+.wrap-form .form-detail {
     width: 100%;
     padding: 10px;
+    margin-bottom: 15px;
 }
 
-.buttonSubmit button {
+.buttonSubmit {
     float: right;
     background-color: #01a453;
     padding: 15px 25px;

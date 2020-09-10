@@ -65,25 +65,7 @@ get_header();
                                 </div>
                                 <div class="col-md-5 col-sm-12 col-xs-12">
                                     <div class="wrap-form">
-                                        <div class="text-name">
-                                            <input type="text" placeholder="Họ và tên">
-                                        </div>
-
-                                        <div class="text-address">
-                                            <input type="text" placeholder="Địa chỉ">
-                                        </div>
-
-                                        <div class="text-number">
-                                            <input type="text" placeholder="Địa chỉ">
-                                        </div>
-
-                                        <div class="text-number">
-                                            <textarea name="" id="" cols="30" rows="18" placeholder="Nội dung"></textarea>
-                                        </div>
-
-                                        <div class="buttonSubmit">
-                                            <button>Gửi</button>
-                                        </div>
+                                        <?php echo do_shortcode( '[contact-form-7 id="64" title="Liên Hệ"]' ); ?>
                                     </div>
                                 </div>
                             </div>
