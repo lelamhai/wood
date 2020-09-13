@@ -502,6 +502,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: none;
 }
 
+.home-menu .navbar-default ul .current-menu-parent,
 .home-menu .navbar-default ul .current-menu-item {
     background-color: #ffffff;
 }
@@ -517,6 +518,7 @@ h1, h2, h3, h4, h5, h6, p {
     border: 1px solid #01a453;
 }
 
+.home-menu .navbar-default ul .current-menu-parent a,
 .home-menu .navbar-default ul .current-menu-item a {
     color: #01a453;
 }
@@ -534,34 +536,41 @@ h1, h2, h3, h4, h5, h6, p {
 
 /*================ breadcrumbs ================*/
 .breadcrumbs {
-    color: #01a453;
+    color: rgb(0, 0, 238);
     text-transform: uppercase;
     margin-bottom: 30px;
     font-weight: 700;
+    font-size: 12px;
+}
+
+.breadcrumbs b {
+    color:#999
+}
+
+/*================ Pagination ================*/
+.page-numbers {
+    float: right;
+}
+
+.page-numbers li {
+    float: left;
+    background-color: #999;
+    padding: 10px 15px;
+    margin-right: 5px;
+}
+
+.page-numbers li span {
+    font-size: 18px;
+    color: #fff;
+}
+
+.page-numbers li a {
+    font-size: 18px;
 }
 
 /*================ selling-products ================*/
-.selling-products {
+.wrap-category {
     margin-bottom: 30px;
-    display: inline-block;
-}
-
-/*================ products ================*/
-.products {
-    margin-bottom: 30px;
-    display: inline-block;
-}
-
-/*================ desgin ================*/
-.desgin {
-    margin-bottom: 30px;
-    display: inline-block;
-}
-
-/*================ desgin ================*/
-.construction {
-    margin-bottom: 30px;
-    display: inline-block;
 }
 
 /*================ items ================*/

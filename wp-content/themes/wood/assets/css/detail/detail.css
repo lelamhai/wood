@@ -2,15 +2,12 @@
     margin-bottom: 45px;
 }
 
-.breadcrumbs b {
-    color:rgb(0, 0, 238)
-}
-
 .detail-img-left img {
     width: 100%;
     height: auto;
 }
 
+.wrap-detail-design .title,
 .detail-content-right .title {
     color: #01a453;
     text-transform: uppercase;

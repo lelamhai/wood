@@ -29,7 +29,8 @@ function twentytwenty_theme_support() {
 	set_post_thumbnail_size( 1200, 9999 );
 
 	// Add custom image size used in Cover Template.
-	add_image_size( 'twentytwenty-fullscreen', 1980, 9999 );
+	add_image_size('item_239x238',239,238, true);
+	add_image_size('item_detail_458x250',458,250, true);
 
 	// Custom logo.
 	$logo_width  = 120;

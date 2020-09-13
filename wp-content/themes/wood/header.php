@@ -20,18 +20,18 @@
 		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/listproduct/responsive.css">
 
 		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/detail/detail.css">
-		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/detail/responsive.css">
+		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/detail/responsive.css?v=1">
 
 		<?php wp_head(); ?>
 	</head>
 	<body>
-		<div class="img-left">
+		<!-- <div class="img-left">
 			<img src="<?php bloginfo('template_url'); ?>/assets/img/common/img_left.png" alt="">
 		</div>
 
 		<div class="img-right">
 			<img src="<?php bloginfo('template_url'); ?>/assets/img/common/img_left.png" alt="">
-		</div>
+		</div> -->
 
 
 		<div class="container">
@@ -93,8 +93,6 @@
 					<?php
 					if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
 						?>
-
-							
 
 								<?php
 								if ( has_nav_menu( 'primary' ) ) {
