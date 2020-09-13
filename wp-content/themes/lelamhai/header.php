@@ -1,18 +1,7 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Twenty_Nineteen
- * @since Twenty Nineteen 1.0
- */
-?><!doctype html>
-<html <?php language_attributes(); ?>>
-<head>
+<!DOCTYPE html>
+
+<html class="no-js" <?php language_attributes(); ?>>
+	<head>
 
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
@@ -35,9 +24,8 @@
 
 		<?php wp_head(); ?>
 	</head>
-
-<body>
-<!-- <div class="img-left">
+	<body>
+		<!-- <div class="img-left">
 			<img src="<?php bloginfo('template_url'); ?>/assets/img/common/img_left.png" alt="">
 		</div>
 
@@ -99,22 +87,12 @@
 					</div>
 					<div id="navbar" class="navbar-collapse collapse navbar-collapse-custom" aria-expanded="false"
 					style="height: 1px;">
-					<ul class="nav navbar-nav ">
-
-
-					<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
-		
-						<?php
-						wp_nav_menu(
-							array(
-								'menu_class'     => 'main-menu',
-							)
-						);
-						?>
 					
-				<?php endif; ?>	
-						
+					<ul class="nav navbar-nav ">
+						<?php echo do_shortcode('[main_menu]'); ?>
 					</ul>
+                    
+                  </ul>
 					</div>
 				</nav>
 			</div>
@@ -162,7 +140,4 @@
 			</div>
     	</div>
     <div class="main">
-
-
-
-
+<main>
