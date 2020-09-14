@@ -69,379 +69,82 @@ function agilsun_imagesize(){
  add_action('after_setup_theme','agilsun_imagesize');
 
 
-//======================================= Custom post type =======================================//
-
- function products_custom_post_type()
-{
-    $label = array(
-        'name' => 'Sản Phẩm', //Tên post type dạng số nhiều
-        'singular_name' => 'Sản Phẩm' //Tên post type dạng số ít
-    );
- 
-    $args = array(
-        'labels' => $label, //Gọi các label trong biến $label ở trên
-        'description' => 'Post type đăng Sản Phẩm', //Mô tả của post type
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail'
-        ), //Các tính năng được hỗ trợ trong post type
-        'taxonomies' => array( 'category', 'post_tag' ), //Các taxonomy được phép sử dụng để phân loại nội dung
-        'hierarchical' => false, //Cho phép phân cấp, nếu là false thì post type này giống như Post, true thì giống như Page
-        'public' => true, //Kích hoạt post type
-        'show_ui' => true, //Hiển thị khung quản trị như Post/Page
-        'show_in_menu' => true, //Hiển thị trên Admin Menu (tay trái)
-        'show_in_nav_menus' => true, //Hiển thị trong Appearance -> Menus
-        'show_in_admin_bar' => true, //Hiển thị trên thanh Admin bar màu đen.
-        'menu_position' => 5, //Thứ tự vị trí hiển thị trong menu (tay trái)
-        'menu_icon' => '', //Đường dẫn tới icon sẽ hiển thị
-        'can_export' => true, //Có thể export nội dung bằng Tools -> Export
-        'has_archive' => true, //Cho phép lưu trữ (month, date, year)
-        'exclude_from_search' => false, //Loại bỏ khỏi kết quả tìm kiếm
-        'publicly_queryable' => true, //Hiển thị các tham số trong query, phải đặt true
-        'capability_type' => 'post' //
-    );
- 
-    register_post_type('products', $args); //Tạo post type với slug tên là sanpham và các tham số trong biến $args ở trên
+/** REGISTER LIST POST_TYPES **/
+add_action('init', 'hrPostTypeRegister');
+function hrPostTypeRegister() {
+	$post_types = array(
+		'products' => array(
+			'labels' => array(
+				'name' => __( 'Sản Phẩm', 'wood' ),
+				'singular_name' => __( 'Sản Phẩm', 'wood' ),
+				'add_new_item' => __( 'Add New', 'wood' ),
+				'add_new' => __( 'Add New', 'wood' ),
+			),
+			'rewrite' => array('slug' => 'san-pham'),
+            'supports' => array('title','editor','thumbnail'),
+            'menu_position' => 5
+		)
+	);
+	foreach ($post_types as $post_type => $args){
+		$defaults = array(
+			'public' => true,
+			'show_ui' => true,
+			'has_archive' => true,
+			'show_in_rest' => false
+		);
+		$args = wp_parse_args( $args, $defaults );
+		register_post_type( $post_type , $args );
+	}
 }
-add_action('init', 'products_custom_post_type');
 
-
-function news_custom_post_type()
-{
-    $label = array(
-        'name' => 'Tin Tức', //Tên post type dạng số nhiều
-        'singular_name' => 'Tin Tức' //Tên post type dạng số ít
+function pp_create_taxonomy($args) {
+    if(!is_array($args) || !$args['post_type'] || !$args['name'] || !$args['single'] || !$args['taxonomy'] || !$args['slug']) return;
+    $post_type = $args['post_type'];
+    $name = $args['name'];
+    $single = $args['single'];
+    $slug = $args['slug'];
+    $rewrite = (isset($args['rewrite']))?$args['rewrite']:$slug;
+    $taxonomy = $args['taxonomy'];
+    $labels = array(
+        'name' => __($name,'pp'),
+        'singular_name' => __($single,'pp'),
+        'search_items' => __('Filter By '.$name,'pp'),
+        'popular_items' => __('Popular '.$name,'pp'),
+        'all_items' => __('All '.$name,'pp'),
+        'parent_item' => null,
+        'parent_item_colon' => null,
+        'edit_item' => __('Edit '.$single,'pp'),
+        'update_item' => __('Update '.$single,'pp'),
+        'add_new_item' => __('Add New '.$single,'pp'),
+        'new_item_name' => __('Add New '.$single,'pp'),
+        'menu_name' => __($name,'pp'),
     );
- 
     $args = array(
-        'labels' => $label, //Gọi các label trong biến $label ở trên
-        'description' => 'Post type đăng Tin Tức', //Mô tả của post type
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail'
-        ), //Các tính năng được hỗ trợ trong post type
-        'taxonomies' => array( 'category', 'post_tag' ), //Các taxonomy được phép sử dụng để phân loại nội dung
-        'hierarchical' => false, //Cho phép phân cấp, nếu là false thì post type này giống như Post, true thì giống như Page
-        'public' => true, //Kích hoạt post type
-        'show_ui' => true, //Hiển thị khung quản trị như Post/Page
-        'show_in_menu' => true, //Hiển thị trên Admin Menu (tay trái)
-        'show_in_nav_menus' => true, //Hiển thị trong Appearance -> Menus
-        'show_in_admin_bar' => true, //Hiển thị trên thanh Admin bar màu đen.
-        'menu_position' => 5, //Thứ tự vị trí hiển thị trong menu (tay trái)
-        'menu_icon' => '', //Đường dẫn tới icon sẽ hiển thị
-        'can_export' => true, //Có thể export nội dung bằng Tools -> Export
-        'has_archive' => true, //Cho phép lưu trữ (month, date, year)
-        'exclude_from_search' => false, //Loại bỏ khỏi kết quả tìm kiếm
-        'publicly_queryable' => true, //Hiển thị các tham số trong query, phải đặt true
-        'capability_type' => 'post' //
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => $rewrite),
     );
- 
-    register_post_type('news', $args); //Tạo post type với slug tên là sanpham và các tham số trong biến $args ở trên
+    register_taxonomy($taxonomy, $post_type, $args);
 }
-add_action('init', 'news_custom_post_type');
 
-
-
-
-
-
-
-
-
-
-//======================================= Custom post type =======================================//
-function sango_custom_post_type()
-{
-    $label = array(
-        'name' => 'Sàn Gỗ', //Tên post type dạng số nhiều
-        'singular_name' => 'Sàn Gỗ' //Tên post type dạng số ít
-    );
- 
+function create_custom_taxonomies() {
     $args = array(
-        'labels' => $label, //Gọi các label trong biến $label ở trên
-        'description' => 'Post type đăng sàn gỗ', //Mô tả của post type
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail'
-        ), //Các tính năng được hỗ trợ trong post type
-        'taxonomies' => array( 'category', 'post_tag' ), //Các taxonomy được phép sử dụng để phân loại nội dung
-        'hierarchical' => false, //Cho phép phân cấp, nếu là false thì post type này giống như Post, true thì giống như Page
-        'public' => true, //Kích hoạt post type
-        'show_ui' => true, //Hiển thị khung quản trị như Post/Page
-        'show_in_menu' => true, //Hiển thị trên Admin Menu (tay trái)
-        'show_in_nav_menus' => true, //Hiển thị trong Appearance -> Menus
-        'show_in_admin_bar' => true, //Hiển thị trên thanh Admin bar màu đen.
-        'menu_position' => 5, //Thứ tự vị trí hiển thị trong menu (tay trái)
-        'menu_icon' => '', //Đường dẫn tới icon sẽ hiển thị
-        'can_export' => true, //Có thể export nội dung bằng Tools -> Export
-        'has_archive' => true, //Cho phép lưu trữ (month, date, year)
-        'exclude_from_search' => false, //Loại bỏ khỏi kết quả tìm kiếm
-        'publicly_queryable' => true, //Hiển thị các tham số trong query, phải đặt true
-        'capability_type' => 'post' //
+        array(
+            "post_type" => array('products'),
+            "name" => "Product category",
+            "single" => "Product category",
+            "slug" => "product_cat",
+            "taxonomy" => "product_cat",
+        ),
     );
- 
-    register_post_type('san-go', $args); //Tạo post type với slug tên là sanpham và các tham số trong biến $args ở trên
+    foreach($args as $arg) {
+        if(!empty($arg['post_type'])) {
+            pp_create_taxonomy($arg);
+        }
+    }
 }
-add_action('init', 'sango_custom_post_type');
-
-
-function sannhua_custom_post_type()
-{
-    $label = array(
-        'name' => 'Sàn Nhựa', //Tên post type dạng số nhiều
-        'singular_name' => 'Sàn Nhựa' //Tên post type dạng số ít
-    );
- 
-    $args = array(
-        'labels' => $label, //Gọi các label trong biến $label ở trên
-        'description' => 'Post type đăng sàn nhựa', //Mô tả của post type
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail'
-        ), //Các tính năng được hỗ trợ trong post type
-        'taxonomies' => array( 'category', 'post_tag' ), //Các taxonomy được phép sử dụng để phân loại nội dung
-        'hierarchical' => false, //Cho phép phân cấp, nếu là false thì post type này giống như Post, true thì giống như Page
-        'public' => true, //Kích hoạt post type
-        'show_ui' => true, //Hiển thị khung quản trị như Post/Page
-        'show_in_menu' => true, //Hiển thị trên Admin Menu (tay trái)
-        'show_in_nav_menus' => true, //Hiển thị trong Appearance -> Menus
-        'show_in_admin_bar' => true, //Hiển thị trên thanh Admin bar màu đen.
-        'menu_position' => 5, //Thứ tự vị trí hiển thị trong menu (tay trái)
-        'menu_icon' => '', //Đường dẫn tới icon sẽ hiển thị
-        'can_export' => true, //Có thể export nội dung bằng Tools -> Export
-        'has_archive' => true, //Cho phép lưu trữ (month, date, year)
-        'exclude_from_search' => false, //Loại bỏ khỏi kết quả tìm kiếm
-        'publicly_queryable' => true, //Hiển thị các tham số trong query, phải đặt true
-        'capability_type' => 'post' //
-    );
- 
-    register_post_type('san-nhua', $args); //Tạo post type với slug tên là sanpham và các tham số trong biến $args ở trên
-}
-add_action('init', 'sannhua_custom_post_type');
-
-
-function giaydantuong_custom_post_type()
-{
-    $label = array(
-        'name' => 'Giấy Dán Tường', //Tên post type dạng số nhiều
-        'singular_name' => 'Giấy Dán Tường' //Tên post type dạng số ít
-    );
-    
-    $args = array(
-        'labels' => $label, //Gọi các label trong biến $label ở trên
-        'description' => 'Post type đăng Giấy Dán Tường', //Mô tả của post type
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail'
-        ), //Các tính năng được hỗ trợ trong post type
-		'taxonomies' => array( 'category', 'post_tag' ), //Các taxonomy được phép sử dụng để phân loại nội dung
-        'hierarchical' => false, //Cho phép phân cấp, nếu là false thì post type này giống như Post, true thì giống như Page
-        'public' => true, //Kích hoạt post type
-        'show_ui' => true, //Hiển thị khung quản trị như Post/Page
-        'show_in_menu' => true, //Hiển thị trên Admin Menu (tay trái)
-        'show_in_nav_menus' => true, //Hiển thị trong Appearance -> Menus
-        'show_in_admin_bar' => true, //Hiển thị trên thanh Admin bar màu đen.
-        'menu_position' => 5, //Thứ tự vị trí hiển thị trong menu (tay trái)
-        'menu_icon' => '', //Đường dẫn tới icon sẽ hiển thị
-        'can_export' => true, //Có thể export nội dung bằng Tools -> Export
-        'has_archive' => true, //Cho phép lưu trữ (month, date, year)
-        'exclude_from_search' => false, //Loại bỏ khỏi kết quả tìm kiếm
-        'publicly_queryable' => true, //Hiển thị các tham số trong query, phải đặt true
-        'capability_type' => 'post' //
-    );
- 
-    register_post_type('giay-dan-tuong', $args); //Tạo post type với slug tên là sanpham và các tham số trong biến $args ở trên
- 
-}
-add_action('init', 'giaydantuong_custom_post_type');
-
-
-function tamnhuapvc_custom_post_type()
-{
-    $label = array(
-        'name' => 'Tấm Nhựa PVC', //Tên post type dạng số nhiều
-        'singular_name' => 'Tấm Nhựa PVC' //Tên post type dạng số ít
-    );
-    
-    $args = array(
-        'labels' => $label, //Gọi các label trong biến $label ở trên
-        'description' => 'Post type đăng Tấm Nhựa PVC', //Mô tả của post type
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail'
-        ), //Các tính năng được hỗ trợ trong post type
-        'taxonomies' => array( 'category', 'post_tag' ), //Các taxonomy được phép sử dụng để phân loại nội dung
-        'hierarchical' => false, //Cho phép phân cấp, nếu là false thì post type này giống như Post, true thì giống như Page
-        'public' => true, //Kích hoạt post type
-        'show_ui' => true, //Hiển thị khung quản trị như Post/Page
-        'show_in_menu' => true, //Hiển thị trên Admin Menu (tay trái)
-        'show_in_nav_menus' => true, //Hiển thị trong Appearance -> Menus
-        'show_in_admin_bar' => true, //Hiển thị trên thanh Admin bar màu đen.
-        'menu_position' => 5, //Thứ tự vị trí hiển thị trong menu (tay trái)
-        'menu_icon' => '', //Đường dẫn tới icon sẽ hiển thị
-        'can_export' => true, //Có thể export nội dung bằng Tools -> Export
-        'has_archive' => true, //Cho phép lưu trữ (month, date, year)
-        'exclude_from_search' => false, //Loại bỏ khỏi kết quả tìm kiếm
-        'publicly_queryable' => true, //Hiển thị các tham số trong query, phải đặt true
-        'capability_type' => 'post' //
-    );
- 
-    register_post_type('tam-nhua-pvc', $args); //Tạo post type với slug tên là sanpham và các tham số trong biến $args ở trên
- 
-}
-add_action('init', 'tamnhuapvc_custom_post_type');
-
-
-
-function lamgo_custom_post_type()
-{
-    $label = array(
-        'name' => 'Lam Gỗ', //Tên post type dạng số nhiều
-        'singular_name' => 'Lam Gỗ' //Tên post type dạng số ít
-    );
-    
-    $args = array(
-        'labels' => $label, //Gọi các label trong biến $label ở trên
-        'description' => 'Post type đăng Lam Gỗ', //Mô tả của post type
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail'
-        ), //Các tính năng được hỗ trợ trong post type
-        'taxonomies' => array( 'category', 'post_tag' ), //Các taxonomy được phép sử dụng để phân loại nội dung
-        'hierarchical' => false, //Cho phép phân cấp, nếu là false thì post type này giống như Post, true thì giống như Page
-        'public' => true, //Kích hoạt post type
-        'show_ui' => true, //Hiển thị khung quản trị như Post/Page
-        'show_in_menu' => true, //Hiển thị trên Admin Menu (tay trái)
-        'show_in_nav_menus' => true, //Hiển thị trong Appearance -> Menus
-        'show_in_admin_bar' => true, //Hiển thị trên thanh Admin bar màu đen.
-        'menu_position' => 5, //Thứ tự vị trí hiển thị trong menu (tay trái)
-        'menu_icon' => '', //Đường dẫn tới icon sẽ hiển thị
-        'can_export' => true, //Có thể export nội dung bằng Tools -> Export
-        'has_archive' => true, //Cho phép lưu trữ (month, date, year)
-        'exclude_from_search' => false, //Loại bỏ khỏi kết quả tìm kiếm
-        'publicly_queryable' => true, //Hiển thị các tham số trong query, phải đặt true
-        'capability_type' => 'post' //
-    );
- 
-    register_post_type('lam-go', $args); //Tạo post type với slug tên là sanpham và các tham số trong biến $args ở trên
- 
-}
-add_action('init', 'lamgo_custom_post_type');
-
-
-function lamsong_custom_post_type()
-{
-    $label = array(
-        'name' => 'Làm Sóng', //Tên post type dạng số nhiều
-        'singular_name' => 'Làm Sóng' //Tên post type dạng số ít
-    );
-    
-    $args = array(
-        'labels' => $label, //Gọi các label trong biến $label ở trên
-        'description' => 'Post type đăng Làm Sóng', //Mô tả của post type
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail'
-        ), //Các tính năng được hỗ trợ trong post type
-        'taxonomies' => array( 'category', 'post_tag' ), //Các taxonomy được phép sử dụng để phân loại nội dung
-        'hierarchical' => false, //Cho phép phân cấp, nếu là false thì post type này giống như Post, true thì giống như Page
-        'public' => true, //Kích hoạt post type
-        'show_ui' => true, //Hiển thị khung quản trị như Post/Page
-        'show_in_menu' => true, //Hiển thị trên Admin Menu (tay trái)
-        'show_in_nav_menus' => true, //Hiển thị trong Appearance -> Menus
-        'show_in_admin_bar' => true, //Hiển thị trên thanh Admin bar màu đen.
-        'menu_position' => 5, //Thứ tự vị trí hiển thị trong menu (tay trái)
-        'menu_icon' => '', //Đường dẫn tới icon sẽ hiển thị
-        'can_export' => true, //Có thể export nội dung bằng Tools -> Export
-        'has_archive' => true, //Cho phép lưu trữ (month, date, year)
-        'exclude_from_search' => false, //Loại bỏ khỏi kết quả tìm kiếm
-        'publicly_queryable' => true, //Hiển thị các tham số trong query, phải đặt true
-        'capability_type' => 'post' //
-    );
- 
-    register_post_type('lam-song', $args); //Tạo post type với slug tên là sanpham và các tham số trong biến $args ở trên
- 
-}
-add_action('init', 'lamsong_custom_post_type');
-
-
-function thietke_custom_post_type()
-{
-    $label = array(
-        'name' => 'Thiết kế', //Tên post type dạng số nhiều
-        'singular_name' => 'Thiết kế' //Tên post type dạng số ít
-    );
-    
-    $args = array(
-        'labels' => $label, //Gọi các label trong biến $label ở trên
-        'description' => 'Post type đăng Thiết kế', //Mô tả của post type
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail'
-        ), //Các tính năng được hỗ trợ trong post type
-        'taxonomies' => array( 'category', 'post_tag' ), //Các taxonomy được phép sử dụng để phân loại nội dung
-        'hierarchical' => false, //Cho phép phân cấp, nếu là false thì post type này giống như Post, true thì giống như Page
-        'public' => true, //Kích hoạt post type
-        'show_ui' => true, //Hiển thị khung quản trị như Post/Page
-        'show_in_menu' => true, //Hiển thị trên Admin Menu (tay trái)
-        'show_in_nav_menus' => true, //Hiển thị trong Appearance -> Menus
-        'show_in_admin_bar' => true, //Hiển thị trên thanh Admin bar màu đen.
-        'menu_position' => 5, //Thứ tự vị trí hiển thị trong menu (tay trái)
-        'menu_icon' => '', //Đường dẫn tới icon sẽ hiển thị
-        'can_export' => true, //Có thể export nội dung bằng Tools -> Export
-        'has_archive' => true, //Cho phép lưu trữ (month, date, year)
-        'exclude_from_search' => false, //Loại bỏ khỏi kết quả tìm kiếm
-        'publicly_queryable' => true, //Hiển thị các tham số trong query, phải đặt true
-        'capability_type' => 'post' //
-    );
- 
-    register_post_type('thiet-ke', $args); //Tạo post type với slug tên là sanpham và các tham số trong biến $args ở trên
- 
-}
-add_action('init', 'thietke_custom_post_type');
-
-
-function thicong_custom_post_type()
-{
-    $label = array(
-        'name' => 'Thi Công', //Tên post type dạng số nhiều
-        'singular_name' => 'Thi Công' //Tên post type dạng số ít
-    );
-    
-    $args = array(
-        'labels' => $label, //Gọi các label trong biến $label ở trên
-        'description' => 'Post type đăng Thi Công', //Mô tả của post type
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail'
-        ), //Các tính năng được hỗ trợ trong post type
-        'taxonomies' => array( 'category', 'post_tag' ), //Các taxonomy được phép sử dụng để phân loại nội dung
-        'hierarchical' => false, //Cho phép phân cấp, nếu là false thì post type này giống như Post, true thì giống như Page
-        'public' => true, //Kích hoạt post type
-        'show_ui' => true, //Hiển thị khung quản trị như Post/Page
-        'show_in_menu' => true, //Hiển thị trên Admin Menu (tay trái)
-        'show_in_nav_menus' => true, //Hiển thị trong Appearance -> Menus
-        'show_in_admin_bar' => true, //Hiển thị trên thanh Admin bar màu đen.
-        'menu_position' => 5, //Thứ tự vị trí hiển thị trong menu (tay trái)
-        'menu_icon' => '', //Đường dẫn tới icon sẽ hiển thị
-        'can_export' => true, //Có thể export nội dung bằng Tools -> Export
-        'has_archive' => true, //Cho phép lưu trữ (month, date, year)
-        'exclude_from_search' => false, //Loại bỏ khỏi kết quả tìm kiếm
-        'publicly_queryable' => true, //Hiển thị các tham số trong query, phải đặt true
-        'capability_type' => 'post' //
-    );
- 
-    register_post_type('thi-cong', $args); //Tạo post type với slug tên là sanpham và các tham số trong biến $args ở trên
- 
-}
-add_action('init', 'thicong_custom_post_type');
+add_action('init', 'create_custom_taxonomies', 0);
+?>
