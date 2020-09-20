@@ -434,6 +434,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     float: right;
     padding-right: 15px;
+    padding-top: 15px;
 }
 
 .button-search {
@@ -489,6 +490,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 .header-logo {
     padding-left: 15px;
+}
+
+.header-logo img {
+    width: 150px;
 }
 
 .home-menu .navbar-collapse-custom {
@@ -824,6 +829,7 @@ footer {
 
     .header-logo {
         text-align: center;
+        padding-bottom: 15px;
     }
 
     .wrap-banner-address {

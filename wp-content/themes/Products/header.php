@@ -40,7 +40,7 @@
 			<div class="row wrap-banner">
 				<div class="col-md-2 col-sm-2 col-xs-12">
 					<div class="header-logo">
-						<img src="<?php bloginfo('template_url'); ?>/assets/img/common/img_logo.png" alt="">
+						<img src="<?php bloginfo('template_url'); ?>/assets/img/common/img_logo.svg" alt="">
 					</div>
 				</div>
 				
