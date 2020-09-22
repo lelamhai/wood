@@ -40,7 +40,7 @@
 			<div class="row wrap-banner">
 				<div class="col-md-2 col-sm-2 col-xs-12">
 					<div class="header-logo">
-						<img src="<?php bloginfo('template_url'); ?>/assets/img/common/img_logo.svg" alt="">
+						<a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/common/img_logo.svg" alt=""></a>
 					</div>
 				</div>
 				
@@ -56,11 +56,11 @@
 						</div>
 
 						<div class="wrap-banner-phone">
-							<span><span><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_phone.png" alt=""></span><span class="phone-text">0708220000</span></span>
+							<span><span><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_call.png" alt=""></span><span class="phone-text">0708220000</span></span>
 						</div>
 
 						<div class="wrap-banner-address">
-							<span><span ><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_address.png" alt=""></span><span class="address-text">86 CHU VĂN AN - P.26 - Q.BÌNH THẠNH - HCM</span></span>
+							<span><span ><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_home.png" alt=""></span><span class="address-text">86 CHU VĂN AN - P.26 - Q.BÌNH THẠNH - HCM</span></span>
 						</div>
 						
 					</div>
@@ -111,11 +111,11 @@
 				<div class="carousel-inner">
 		
 					<div class="item active">
-					<img src="<?php bloginfo('template_url'); ?>/assets/img/home/slider1.jpg" alt="">
+					<img src="<?php bloginfo('template_url'); ?>/assets/img/home/slider5.jpg" alt="">
 					</div>
 		
 					<div class="item">
-					<img src="<?php bloginfo('template_url'); ?>/assets/img/home/slider2.jpg" alt="">
+					<img src="<?php bloginfo('template_url'); ?>/assets/img/home/slider6.jpg" alt="">
 					</div>
 		
 					<div class="item">
