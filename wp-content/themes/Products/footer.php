@@ -10,8 +10,8 @@
 						
 						<div class="hr-footer"></div>
 
-						<P class="hotline">HOTLINE: 070822000</P>
-						<P class="address">ĐỊA CHỈ: 86 CHU VĂN AN - P.26 - BÌNH THẠNH</P>
+						<P class="hotline">HOTLINE: 0708220000</P>
+						<P class="address">ĐỊA CHỈ: 86 CHU VĂN AN - P.26 - Q.BÌNH THẠNH - HCM</P>
 					</div>
 
 				</div>

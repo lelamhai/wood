@@ -56,11 +56,11 @@
 						</div>
 
 						<div class="wrap-banner-phone">
-							<span><span><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_phone.png" alt=""></span><span class="phone-text">070822000</span></span>
+							<span><span><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_phone.png" alt=""></span><span class="phone-text">0708220000</span></span>
 						</div>
 
 						<div class="wrap-banner-address">
-							<span><span ><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_address.png" alt=""></span><span class="address-text">86 CHU VĂN AN - P.26 - BÌNH THẠNH</span></span>
+							<span><span ><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_address.png" alt=""></span><span class="address-text">86 CHU VĂN AN - P.26 - Q.BÌNH THẠNH - HCM</span></span>
 						</div>
 						
 					</div>

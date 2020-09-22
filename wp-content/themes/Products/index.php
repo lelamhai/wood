@@ -281,7 +281,7 @@ get_header();
 
 
 <?php
-$array = array(
+$args = array(
   'category_name' => 'tam-nhua-pvc',
   'posts_per_page' => 4
 );  
@@ -350,7 +350,7 @@ $array = array(
 
 
 <?php
-$array = array(
+$args = array(
   'category_name' => 'lam-go',
   'posts_per_page' => 4
 );  
@@ -418,7 +418,7 @@ $array = array(
    
 
 <?php
-$array = array(
+$args = array(
   'category_name' => 'lam-song',
   'posts_per_page' => 4
 );  
