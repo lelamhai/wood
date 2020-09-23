@@ -20,7 +20,7 @@
 		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/listproduct/responsive.css">
 
 		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/detail/detail.css">
-		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/detail/responsive.css?v=1">
+		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/detail/responsive.css">
 
 		<?php wp_head(); ?>
 	</head>
@@ -67,8 +67,10 @@
 				</div>
 				<div class="col-md-3 col-sm-3 col-xs-12">
 					<div class="banner-search">
-						<div class="text-search"><input type="text" placeholder="Tìm kiếm"></div>
-						<div class="button-search"><button>Tìm</button></div>
+						<form action="/search" method="get">
+							<div class="text-search"><input type="text" name="search" placeholder="Tìm kiếm"></div>
+							<div class="button-search"><button>Tìm</button></div>
+						</form>
 					</div>
 				</div>
 			</div>

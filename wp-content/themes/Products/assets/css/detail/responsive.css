@@ -2,7 +2,15 @@
    Responsive CSS Landscape Tablet
    ========================================================================== */
    @media only screen and (min-width: 960px) and (max-width: 1240px) {
+      .detail-design-content > p > img  {
+         max-width: 100%;
+         height: auto;
+      }
 
+      #detail > p > img  {
+         max-width: 100%;
+         height: auto;
+      }
    }
    
    
@@ -15,9 +23,15 @@
        }
      
        
-      .detail-design-content > P > img  {
-          width: 100%;
+      .detail-design-content > p > img  {
+          max-width: 100%;
+          height: auto;
        }
+
+       #detail > p > img  {
+         max-width: 100%;
+         height: auto;
+      }
    }
    
    
@@ -31,6 +45,16 @@
 
       .wrap-tabs .custom-nav-tabs li a {
          text-align: center;
+      }
+
+      .detail-design-content > p > img  {
+         max-width: 100%;
+         height: auto;
+      }
+
+      #detail > p > img  {
+         max-width: 100%;
+         height: auto;
       }
 
       .detail-img-left {
@@ -79,6 +103,16 @@
 
       .detail-img-left {
          padding-bottom: 15px;
+      }
+
+      .detail-design-content > p > img  {
+         max-width: 100%;
+         height: auto;
+      }
+
+      #detail > p > img  {
+         max-width: 100%;
+         height: auto;
       }
 
       .detail-content-right .title {
