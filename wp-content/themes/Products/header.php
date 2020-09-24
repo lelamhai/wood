@@ -113,18 +113,19 @@
 				<div class="carousel-inner">
 		
 					<div class="item active">
-					<img src="<?php bloginfo('template_url'); ?>/assets/img/home/slider5.jpg" alt="">
+					<img src="<?php bloginfo('template_url'); ?>/assets/img/home/1.jpg" alt="">
 					</div>
 		
 					<div class="item">
-					<img src="<?php bloginfo('template_url'); ?>/assets/img/home/slider6.jpg" alt="">
+					<img src="<?php bloginfo('template_url'); ?>/assets/img/home/2.jpg" alt="">
 					</div>
 		
 					<div class="item">
-					<img src="<?php bloginfo('template_url'); ?>/assets/img/home/slider3.jpg" alt="">
+					<img src="<?php bloginfo('template_url'); ?>/assets/img/home/3.jpg" alt="">
 					</div>
+					
 					<div class="item">
-					<img src="<?php bloginfo('template_url'); ?>/assets/img/home/slider4.jpg" alt="">
+					<img src="<?php bloginfo('template_url'); ?>/assets/img/home/4.jpg" alt="">
 					</div>
 		
 				</div>

@@ -431,10 +431,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .banner-search {
-    display: flex;
     float: right;
     padding-right: 15px;
     padding-top: 15px;
+}
+
+.banner-search form {
+    display: flex;
+
 }
 
 .button-search {
@@ -546,6 +550,11 @@ h1, h2, h3, h4, h5, h6 {
 /*================ Slider ================*/
 .wrap-slider {
     margin-bottom: 30px;
+}
+
+.wrap-slider .item img {
+    width: 100%;
+    height: auto;
 }
 
 
@@ -736,6 +745,35 @@ footer {
    Responsive CSS Landscape Tablet
    ========================================================================== */
    @media only screen and (min-width: 960px) and (max-width: 1240px) {
+
+    .header-logo img {
+        width: 100%;
+        height: auto;
+    }
+
+    .navbar .navbar-header {
+        float: none;
+    }
+    .navbar .navbar-toggle {
+        display: block;
+    }
+    .navbar .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar .navbar-nav {
+        float: none!important;
+    }
+    .navbar .navbar-nav > li {
+        float: none;
+    }
+    .navbar .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+
+    .wrap-content .item-title {
+        font-size: 15px;
+    }
+
     .wrap-content .item-title {
         font-size: 15px;
     }
@@ -746,6 +784,30 @@ footer {
    Responsive CSS Portrait Tablet
    ========================================================================== */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
+    .header-logo img {
+        width: 100%;
+        height: auto;
+    }
+
+    .navbar .navbar-header {
+        float: none;
+    }
+    .navbar .navbar-toggle {
+        display: block;
+    }
+    .navbar .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar .navbar-nav {
+        float: none!important;
+    }
+    .navbar .navbar-nav > li {
+        float: none;
+    }
+    .navbar .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+
     .wrap-content .item-title {
         font-size: 15px;
     }
@@ -756,6 +818,12 @@ footer {
    Responsive CSS Landscape Mobile
    ========================================================================== */
  @media only screen and (min-width: 480px) and (max-width: 767px) {
+
+    .header-logo img {
+        width: 100%;
+        height: auto;
+    }
+
     .banner-title h2 {
         font-size: 25px;
     }
@@ -848,7 +916,7 @@ footer {
         padding-right: 0;
         float: initial;
         width: 50%;
-    margin: auto;
+         margin: auto;
     }
 
     .home-menu .container-fluid-custom {

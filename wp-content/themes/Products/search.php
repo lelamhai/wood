@@ -9,10 +9,9 @@ get_header();
 ?>
 <?php
 $keywords = $_GET['search'];
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 $args = array(
-    'category_name' => $queried_category->slug,
-    'posts_per_page' => 8,
+    'posts_per_page' => -1,
     's' => $keywords,
     'paged' => $paged
 ); 
@@ -21,10 +20,18 @@ $args = array(
     $total =  $the_query->max_num_pages;
     if ( $the_query->have_posts() ) {
 ?>
+<style>
+    .search-breadcrumbs {
+        margin-bottom: 30px;
+        font-size: 14px;
+    }
+</style>
+
+ <div class="search-breadcrumbs">
+                <span>Tìm thấy <b> <?php echo $the_query->post_count?> </b> kết quả</span>
+            </div>
+
  <div class="selling-products wrap-category">
-                <div class="wrap-title">
-                    <h4 class="title-h3"><a><?php echo $keywords ?></a></h4>
-                </div>
 
                 <div class="wrap-items">
 
@@ -79,16 +86,15 @@ $args = array(
                     <div class="col-md-12">
 
                     <?php
-                        $pagination = paginate_links(array(
-                            'base' => get_pagenum_link(1) . '%_%',
-                            'format' => '/page/%#%',
-                            'current' => max( 1, get_query_var('paged') ),
-                            'total' =>  $total,
-                            'prev_text'    => __('<'),
-                            'next_text'    => __('>'),
-                            'type' => 'list'
-                        ));
-                        echo $pagination;  
+                      
+                      $pagination = paginate_links(array(
+                        'current' => max( 1, get_query_var('paged') ),
+                        'total' =>  $total,
+                        'prev_text'    => __('<'),
+                        'next_text'    => __('>'),
+                        'type' => 'list'
+                    ));
+                    echo $pagination;  
                     ?>
                     
                     </div>
