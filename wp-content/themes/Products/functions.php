@@ -114,9 +114,12 @@ function load_posts_by_ajax_callback() {
                                         <p>Liên hệ</p>
                                     <?php
                                     } else {
-                                    ?>
-                                        <p><?php echo number_format(get_field( "price", $post->ID ), 0, '.', '.');?> VND</p>
-                                    <?php
+                                        if(get_field( "price", $post->ID ))
+                                        {
+                                            ?>
+                                                <p><?php echo number_format(get_field( "price", $post->ID ), 0, '.', '.');?> VND</p>
+                                            <?php
+                                        }
                                     }
                                 ?>
 
@@ -183,9 +186,12 @@ function search_load_posts_by_ajax_callback() {
                                         <p>Liên hệ</p>
                                     <?php
                                     } else {
-                                    ?>
-                                        <p><?php echo number_format(get_field( "price", $post->ID ), 0, '.', '.');?> VND</p>
-                                    <?php
+                                        if(get_field( "price", $post->ID ))
+                                        {
+                                            ?>
+                                                <p><?php echo number_format(get_field( "price", $post->ID ), 0, '.', '.');?> VND</p>
+                                            <?php
+                                        }
                                     }
                                 ?>
 

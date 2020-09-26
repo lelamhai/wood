@@ -30,9 +30,12 @@ get_header();
 
                                 <?php
                               } else {
-                                ?>
-                                  <div class="price"><span><b class="title-price"> Giá bán: </b> <b class="value-price"><?php echo number_format(get_field( "price", $post->ID ), 0, '.', '.');?></b> <span class="type-money">VND</span></div>
-                                <?php
+                                  if(get_field( "price", $post->ID ) )
+                                  {
+                                    ?>
+                                        <div class="price"><span><b class="title-price"> Giá bán: </b> <b class="value-price"><?php echo number_format(get_field( "price", $post->ID ), 0, '.', '.');?></b> <span class="type-money">VND</span></div>
+                                    <?php
+                                  }
                               }
                           ?>
 							
