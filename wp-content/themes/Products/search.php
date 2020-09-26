@@ -32,7 +32,7 @@ $args = array(
 <div id="category" style="display:none"><?php echo $keywords ?></div>
 
  <div class="search-breadcrumbs">
-                <span>Tìm thấy <b> <?php echo $the_query->post_count?> </b> kết quả</span>
+                <span>Tìm thấy <b> <?php echo $the_query->found_posts;?> </b> kết quả</span>
             </div>
 
  <div class="selling-products wrap-category">
@@ -102,7 +102,6 @@ $args = array(
     } 
     wp_reset_postdata();
 ?>
-
 
 
 
