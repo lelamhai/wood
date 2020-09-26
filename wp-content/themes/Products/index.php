@@ -5,6 +5,7 @@ get_header();
 <?php
    $args = array(
     'category_name' => 'products',
+    'post_status'       => 'publish',
     'posts_per_page' => 8,
     'meta_query' => array(
       array(
@@ -77,6 +78,7 @@ get_header();
 <?php
  $args = array(
   'category_name' => 'san-go',
+  'post_status'       => 'publish',
   'posts_per_page' => 4
 ); 
 
@@ -146,6 +148,7 @@ get_header();
     <?php
  $args = array(
   'category_name' => 'san-nhua',
+  'post_status'       => 'publish',
   'posts_per_page' => 4
 ); 
 
@@ -215,6 +218,7 @@ get_header();
     <?php
  $args = array(
   'category_name' => 'giay-dan-tuong',
+  'post_status'       => 'publish',
   'posts_per_page' => 4
 ); 
 
@@ -283,6 +287,7 @@ get_header();
 <?php
 $args = array(
   'category_name' => 'tam-nhua-pvc',
+  'post_status'       => 'publish',
   'posts_per_page' => 4
 );  
 
@@ -352,6 +357,7 @@ $args = array(
 <?php
 $args = array(
   'category_name' => 'lam-go',
+  'post_status'       => 'publish',
   'posts_per_page' => 4
 );  
 
@@ -420,6 +426,7 @@ $args = array(
 <?php
 $args = array(
   'category_name' => 'lam-song',
+  'post_status'       => 'publish',
   'posts_per_page' => 4
 );  
 

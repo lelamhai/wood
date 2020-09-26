@@ -11,8 +11,10 @@ get_header();
 $keywords = $_GET['search'];
 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 $args = array(
-    'posts_per_page' => -1,
-    's' => $keywords,
+    's'                 => $keywords,
+    'post_type'         => 'post',
+    'post_status'       => 'publish',
+    'posts_per_page'    => 8,
     'paged' => $paged
 ); 
 
@@ -27,6 +29,8 @@ $args = array(
     }
 </style>
 
+<div id="category" style="display:none"><?php echo $keywords ?></div>
+
  <div class="search-breadcrumbs">
                 <span>Tìm thấy <b> <?php echo $the_query->post_count?> </b> kết quả</span>
             </div>
@@ -35,7 +39,7 @@ $args = array(
 
                 <div class="wrap-items">
 
-                    <div class="row">
+                    <div class="row" id="row-more">
 
 <?php
 
@@ -78,28 +82,12 @@ $args = array(
 
         ?>
         </div>
+        <div class="wrap-more">
+            <Button id="search-more">Xem thêm</Button>
+        </div>
     </div>
   </div>
 
-  <div class="wrap-pagination">
-                <div class="row">
-                    <div class="col-md-12">
-
-                    <?php
-                      
-                      $pagination = paginate_links(array(
-                        'current' => max( 1, get_query_var('paged') ),
-                        'total' =>  $total,
-                        'prev_text'    => __('<'),
-                        'next_text'    => __('>'),
-                        'type' => 'list'
-                    ));
-                    echo $pagination;  
-                    ?>
-                    
-                    </div>
-                </div>
-            </div>
   <?php
     } 
     wp_reset_postdata();

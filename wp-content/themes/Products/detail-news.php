@@ -8,7 +8,7 @@
 get_header();
 ?>
     <div class="breadcrumbs">
-        <span><a href="../../">Trang Chủ</a><b> > </b><a href="category/../../">Sàn Gõ</a><b> > </b><a><?php the_title();?></a></span>
+        <span><a href="../../">Trang Chủ</a><b> > </b><a href="category/../../"><?php echo $category[0]->name?></a><b> > </b><a><?php the_title();?></a></span>
     </div>
 
     <div class="wrap-detail-design">

@@ -8,7 +8,7 @@
 get_header();
 ?>
             <div class="breadcrumbs">
-                <span><a href="../../">Trang Chủ</a><b> > </b><a href="category/../../">Sàn Gõ</a><b> > </b><a><?php the_title();?></a></span>
+                <span><a href="../../">Trang Chủ</a><b> > </b><a href="category/../../"><?php echo $category[0]->name?></a><b> > </b><a><?php the_title();?></a></span>
             </div>
 
             <div class="wrap-detail-content">
@@ -26,7 +26,8 @@ get_header();
                               if(get_field( "check-contact", $post->ID ))
                               {
                                 ?>
-                                  <p class="type-money">Liên hệ</p>
+                                  <div class="price"><span><b class="title-price"> Giá bán: </b> <b class="value-price">Liên hệ</span></div>
+
                                 <?php
                               } else {
                                 ?>

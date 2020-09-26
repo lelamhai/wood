@@ -12,7 +12,7 @@ $queried_category = get_term( get_query_var('cat'), 'category' );
                 <span><a href="../../">Trang Chủ</a><b> > </b><a><?php echo $queried_category->name ?></a></span>
             </div>
 
-
+<div id="category" style="display:none"><?php echo $queried_category->name ?></div>
 
 
 <?php
@@ -34,7 +34,7 @@ $args = array(
 
                 <div class="wrap-items">
 
-                    <div class="row">
+                    <div class="row" id="row-more">
 
 <?php
 
@@ -76,30 +76,16 @@ $args = array(
         }
 
         ?>
+
         </div>
+        <div class="wrap-more">
+            <Button id="more">Xem thêm</Button>
+        </div>
+
     </div>
   </div>
 
-  <div class="wrap-pagination">
-                <div class="row">
-                    <div class="col-md-12">
 
-                    <?php
-                        $pagination = paginate_links(array(
-                            'base' => get_pagenum_link(1) . '%_%',
-                            'format' => '/page/%#%',
-                            'current' => max( 1, get_query_var('paged') ),
-                            'total' =>  $total,
-                            'prev_text'    => __('<'),
-                            'next_text'    => __('>'),
-                            'type' => 'list'
-                        ));
-                        echo $pagination;  
-                    ?>
-                    
-                    </div>
-                </div>
-            </div>
   <?php
     } 
     wp_reset_postdata();

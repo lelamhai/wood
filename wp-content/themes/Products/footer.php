@@ -34,6 +34,58 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo get_bloginfo("template_directory"); ?>/assets/slick/slick.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_bloginfo("template_directory"); ?>/assets/js/main.js"></script>
+
+
+	<script type="text/javascript">
+		var page = 3;
+		jQuery(function($) {
+			$('body').on('click', '#more', function() {
+				var category = document.getElementById('category').innerHTML;
+				var data = {
+				'action': 'load_posts_by_ajax',
+				'page': page,
+				'category' : category,
+				'security': '<?php echo wp_create_nonce("load_more_posts_policy"); ?>'
+				};
+				
+				$.post("<?php echo admin_url( 'admin-ajax.php' ); ?>", data, function(response) {
+					if(response != 0)
+					{
+						$('#row-more').append(response);
+					} else {
+						$(".wrap-more").css("display", "none");
+					}
+					page++;
+				});
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+		var page = 3;
+		jQuery(function($) {
+			$('body').on('click', '#search-more', function() {
+				var keyword = document.getElementById('category').innerHTML;
+				var data = {
+				'action': 'search_load_posts_by_ajax',
+				'page': page,
+				'search' : keyword,
+				'security': '<?php echo wp_create_nonce("search_load_more_posts_policy"); ?>'
+				};
+				
+				$.post("<?php echo admin_url( 'admin-ajax.php' ); ?>", data, function(response) {
+					if(response != 0)
+					{
+						$('#row-more').append(response);
+					} else {
+						$(".wrap-more").css("display", "none");
+					}
+					page++;
+				});
+			});
+		});
+	</script>
+
 	<?php wp_footer(); ?>
 </body>
 </html>
