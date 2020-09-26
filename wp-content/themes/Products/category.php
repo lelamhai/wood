@@ -18,14 +18,14 @@ $queried_category = get_term( get_query_var('cat'), 'category' );
 <?php
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
-    'category_name' => $queried_category->slug,
-    'posts_per_page' => 8,
+    'category_name'     => $queried_category->slug,
+    'posts_per_page'    => 8,
     'post_status'       => 'publish',
     'paged' => $paged
 ); 
 
     $the_query = new WP_Query( $args );
-    $total =  $the_query->max_num_pages;
+    $total =  $the_query->post_count;
     if ( $the_query->have_posts() ) {
 ?>
  <div class="selling-products wrap-category">
@@ -82,10 +82,18 @@ $args = array(
         ?>
 
         </div>
-        <div class="wrap-more">
-            <Button id="more">Xem thêm</Button>
-        </div>
 
+            <?php
+                if($total >= 8)
+                {
+                    ?>
+                        <div class="wrap-more">
+                            <Button id="more">Xem thêm</Button>
+                        </div>
+                    <?php
+                }
+            ?>
+           
     </div>
   </div>
 

@@ -19,7 +19,7 @@ $args = array(
 ); 
 
     $the_query = new WP_Query( $args );
-    $total =  $the_query->max_num_pages;
+    $total =  $the_query->post_count;
     if ( $the_query->have_posts() ) {
 ?>
 <style>
@@ -85,9 +85,16 @@ $args = array(
 
         ?>
         </div>
-        <div class="wrap-more">
-            <Button id="search-more">Xem thêm</Button>
-        </div>
+            <?php
+                if($total >= 8)
+                {
+                    ?>
+                        <div class="wrap-more">
+                          <Button id="search-more">Xem thêm</Button>
+                        </div>
+                    <?php
+                }
+            ?>
     </div>
   </div>
 
