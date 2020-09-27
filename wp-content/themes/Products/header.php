@@ -26,10 +26,10 @@
 	</head>
 	<body>
 		<!-- <div class="img-left">
-			<img src="<?php bloginfo('template_url'); ?>/assets/img/common/img_left.png" alt="">
-		</div>
+			<img src="<?php bloginfo('template_url'); ?>/assets/img/common/banner-left.jpg" alt="">
+		</div> -->
 
-		<div class="img-right">
+		<!--<div class="img-right">
 			<img src="<?php bloginfo('template_url'); ?>/assets/img/common/img_left.png" alt="">
 		</div> -->
 
@@ -60,7 +60,7 @@
 						</div>
 
 						<div class="wrap-banner-address">
-							<span><span ><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_home.png" alt=""></span><span class="address-text">86 CHU VĂN AN - P.26 - Q.BÌNH THẠNH - HCM</span></span>
+							<span><span ><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_home.png" alt=""></span><span class="address-text">86 CHU VĂN AN - P.26 - Q.BÌNH THẠNH - TP.HCM</span></span>
 						</div>
 						
 					</div>

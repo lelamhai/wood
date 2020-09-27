@@ -11,7 +11,7 @@
 						<div class="hr-footer"></div>
 
 						<P class="hotline">HOTLINE: 0708220000</P>
-						<P class="address">ĐỊA CHỈ: 86 CHU VĂN AN - P.26 - Q.BÌNH THẠNH - HCM</P>
+						<P class="address">ĐỊA CHỈ: 86 CHU VĂN AN - P.26 - Q.BÌNH THẠNH - TP.HCM</P>
 					</div>
 
 				</div>
