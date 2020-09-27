@@ -6,6 +6,7 @@
 
 <?php
 get_header();
+$posts_per_page = 8;
 ?>
 <?php
 $keywords = $_GET['search'];
@@ -14,7 +15,7 @@ $args = array(
     's'                 => $keywords,
     'post_type'         => 'post',
     'post_status'       => 'publish',
-    'posts_per_page'    => 8,
+    'posts_per_page'    => $posts_per_page,
     'paged' => $paged
 ); 
 
@@ -86,7 +87,7 @@ $args = array(
         ?>
         </div>
             <?php
-                if($total >= 8)
+                if($total >= $posts_per_page)
                 {
                     ?>
                         <div class="wrap-more">

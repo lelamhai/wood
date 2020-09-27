@@ -78,8 +78,9 @@ function load_posts_by_ajax_callback() {
     check_ajax_referer('load_more_posts_policy', 'security');
 
     $paged = $_POST['page'];
-     $category = $_POST['category'];
+    $category = $_POST['category'];
     $posts_per_page = 4;
+    $datas = '';
     if(isset($_POST['category']))
     {
         $arrayCommonCategory = array(
@@ -89,8 +90,11 @@ function load_posts_by_ajax_callback() {
             'paged' => $paged
         );
         $my_posts = new WP_Query( $arrayCommonCategory );
+        
         if($my_posts->have_posts())
         {
+            
+            ob_start();
             while ($my_posts->have_posts()) {
                 $my_posts-> the_post();
                 ?>
@@ -130,8 +134,14 @@ function load_posts_by_ajax_callback() {
                     </div>
                 <?php
             }
+            $datas = ob_get_clean();
+            if($my_posts->max_num_pages==(float)$paged){
+                echo json_encode(array('status'=>2,'datas'=>$datas));
+            }else{
+                echo json_encode(array('status'=>1,'datas'=>$datas));
+            }
         } else {
-            return false;
+            echo json_encode(array('status'=>0,'datas'=>$datas));
         }
         wp_die();
     }
@@ -149,8 +159,8 @@ function search_load_posts_by_ajax_callback() {
 
     $paged = $_POST['page'];
     $keywords = $_POST['search'];
-
     $posts_per_page = 4;
+    $datas = '';
     // if(isset($_POST['category']))
     //{
         $arrays = array(
@@ -163,6 +173,7 @@ function search_load_posts_by_ajax_callback() {
         $query_post = new WP_Query( $arrays );
         if($query_post->have_posts())
         {
+            ob_start();
             while ($query_post->have_posts()) {
                 $query_post-> the_post();
                 ?>
@@ -202,8 +213,14 @@ function search_load_posts_by_ajax_callback() {
                     </div>
                 <?php
             }
+            $datas = ob_get_clean();
+            if($query_post->max_num_pages==(float)$paged){
+                echo json_encode(array('status'=>2,'datas'=>$datas));
+            }else{
+                echo json_encode(array('status'=>1,'datas'=>$datas));
+            }
         } else {
-            return false;
+            echo json_encode(array('status'=>0,'datas'=>$datas));
         }
         wp_die();
     //}

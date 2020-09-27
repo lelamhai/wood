@@ -6,6 +6,8 @@
 
 <?php
 get_header();
+
+$posts_per_page = 8;
 $queried_category = get_term( get_query_var('cat'), 'category' );
 ?>
             <div class="breadcrumbs">
@@ -19,7 +21,7 @@ $queried_category = get_term( get_query_var('cat'), 'category' );
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
     'category_name'     => $queried_category->slug,
-    'posts_per_page'    => 8,
+    'posts_per_page'    => $posts_per_page,
     'post_status'       => 'publish',
     'paged' => $paged
 ); 
@@ -84,7 +86,7 @@ $args = array(
         </div>
 
             <?php
-                if($total >= 8)
+                if($total >= $posts_per_page)
                 {
                     ?>
                         <div class="wrap-more">

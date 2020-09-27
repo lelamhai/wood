@@ -49,13 +49,12 @@
 				};
 				
 				$.post("<?php echo admin_url( 'admin-ajax.php' ); ?>", data, function(response) {
-					if(response != 0)
-					{
-						$('#row-more').append(response);
-					} else {
+					page++;
+					var $res = JSON.parse(response);
+					$('#row-more').append($res.datas);
+					if($res.status==2){
 						$(".wrap-more").css("display", "none");
 					}
-					page++;
 				});
 			});
 		});
@@ -72,15 +71,14 @@
 				'search' : keyword,
 				'security': '<?php echo wp_create_nonce("search_load_more_posts_policy"); ?>'
 				};
-				
+
 				$.post("<?php echo admin_url( 'admin-ajax.php' ); ?>", data, function(response) {
-					if(response != 0)
-					{
-						$('#row-more').append(response);
-					} else {
+					page++;
+					var $res = JSON.parse(response);
+					$('#row-more').append($res.datas);
+					if($res.status==2){
 						$(".wrap-more").css("display", "none");
 					}
-					page++;
 				});
 			});
 		});
