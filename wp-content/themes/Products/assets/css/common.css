@@ -705,8 +705,31 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-box-orient: vertical;
 }
 
-.wrap-content .item-price {
+.item-price {
     color: #FF3838;
+}
+
+.item-price span {
+    display: block;
+    height: 15px;
+}
+
+.price-old {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    text-decoration: line-through;
+    margin-left: 5px;
+    color: #333;
+}
+
+.type-money-last {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    text-decoration: line-through;
+    margin-left: 5px;
+    color: #333;
 }
 
 /* hover zoom  item */

@@ -60,13 +60,23 @@ $args = array(
                                 if(get_field( "check-contact", $post->ID ))
                                 {
                                   ?>
-                                    <p>Liên hệ</p>
+                                    <span><b>Liên hệ</b></span>
                                   <?php
                                 } else {
                                     if(get_field( "price", $post->ID ))
                                     {
                                         ?>
-                                        <p><?php echo number_format(get_field( "price", $post->ID ), 0, '.', '.');?> VND</p>
+                                       <span>
+                                      <b class="price-new"><?php echo number_format(get_field( "price", $post->ID ), 0, '.', '.');?></b><b class="type-money">VND</b>
+                                      <?php 
+                                        if(get_field( "price-old", $post->ID ))
+                                        {
+                                          ?>
+                                            <b class="price-old"><?php echo number_format(get_field( "price-old", $post->ID ), 0, '.', '.');?> VND</b>
+                                          <?php
+                                        }
+                                      ?>
+                                     </span>
                                       <?php
                                     } 
                                 }
@@ -151,19 +161,25 @@ $args = array(
                                                         <p><?php the_title();?></p>
                                                     </div>
                                                     <div class="item-price">
-
-
-
-
                                                         <?php
                                                             if(get_field( "check-contact", $post->ID ))
                                                             {
                                                                 ?>
-                                                                <p>Liên hệ</p>
+                                                                <span><b>Liên hệ</b></span>
                                                                 <?php
                                                             } else {
                                                                 ?>
-                                                                <p><?php echo number_format(get_field( "price", $post->ID ), 0, '.', '.');?> VND</p>
+                                                                <span>
+                                                                    <b class="price-new"><?php echo number_format(get_field( "price", $post->ID ), 0, '.', '.');?></b><b class="type-money">VND</b>
+                                                                    <?php 
+                                                                        if(get_field( "price-old", $post->ID ))
+                                                                        {
+                                                                        ?>
+                                                                            <b class="price-old"><?php echo number_format(get_field( "price-old", $post->ID ), 0, '.', '.');?> VND</b>
+                                                                        <?php
+                                                                        }
+                                                                    ?>
+                                                                    </span>
                                                                 <?php
                                                             }
                                                         ?>
