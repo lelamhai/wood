@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-
+<?php
+	$version = 1;
+?>
 <html class="no-js" <?php language_attributes(); ?>>
 	<head>
 
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css?v=<?php echo $version?>">
 
-		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/slick/slick.css">
-		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/slick/slick-theme.css">
+		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/slick/slick.css?v=<?php echo $version?>">
+		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/slick/slick-theme.css?v=<?php echo $version?>">
 
-		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/common.css">
+		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/common.css?v=<?php echo $version?>">
 
-		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/home/home.css">
-		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/home/responsive.css">
+		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/home/home.css?v=<?php echo $version?>">
+		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/home/responsive.css?v=<?php echo $version?>">
 
-		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/listproduct/list-product.css">
-		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/listproduct/responsive.css">
+		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/listproduct/list-product.css?v=<?php echo $version?>">
+		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/listproduct/responsive.css?v=<?php echo $version?>">
 
-		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/detail/detail.css">
-		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/detail/responsive.css">
+		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/detail/detail.css?v=<?php echo $version?>">
+		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/detail/responsive.css?v=<?php echo $version?>">
 
 		<?php wp_head(); ?>
 	</head>
@@ -90,7 +92,7 @@
 					<div id="navbar" class="navbar-collapse collapse navbar-collapse-custom" aria-expanded="false"
 					style="height: 1px;">
 					
-					<ul class="nav navbar-nav ">
+					<ul class="nav navbar-nav navbar-custom">
 						<?php echo do_shortcode('[main_menu]'); ?>
 					</ul>
                     
