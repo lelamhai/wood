@@ -67,12 +67,12 @@ $args = array(
                                     {
                                         ?>
                                        <span>
-                                      <b class="price-new"><?php echo number_format(get_field( "price", $post->ID ), 0, '.', '.');?></b><b class="type-money">VND</b>
+                                      <b class="price-new"><?php echo number_format(get_field( "price", $post->ID ), 0, '.', '.');?></b><b class="type-money"> VNĐ</b>
                                       <?php 
                                         if(get_field( "price-old", $post->ID ))
                                         {
                                           ?>
-                                            <b class="price-old"><?php echo number_format(get_field( "price-old", $post->ID ), 0, '.', '.');?> VND</b>
+                                            <b class="price-old"><?php echo number_format(get_field( "price-old", $post->ID ), 0, '.', '.');?> VNĐ</b>
                                           <?php
                                         }
                                       ?>
@@ -170,12 +170,12 @@ $args = array(
                                                             } else {
                                                                 ?>
                                                                 <span>
-                                                                    <b class="price-new"><?php echo number_format(get_field( "price", $post->ID ), 0, '.', '.');?></b><b class="type-money">VND</b>
+                                                                    <b class="price-new"><?php echo number_format(get_field( "price", $post->ID ), 0, '.', '.');?></b><b class="type-money"> VNĐ</b>
                                                                     <?php 
                                                                         if(get_field( "price-old", $post->ID ))
                                                                         {
                                                                         ?>
-                                                                            <b class="price-old"><?php echo number_format(get_field( "price-old", $post->ID ), 0, '.', '.');?> VND</b>
+                                                                            <b class="price-old"><?php echo number_format(get_field( "price-old", $post->ID ), 0, '.', '.');?> VNĐ</b>
                                                                         <?php
                                                                         }
                                                                     ?>
