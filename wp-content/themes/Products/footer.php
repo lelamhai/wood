@@ -1,3 +1,11 @@
+
+	<div class="support-customer">
+		<img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_support.png" alt="" class="img-circle" width="135px">
+		
+		<div class="wrap-circle">
+			
+		</div>
+	</div>
 </div>
 	<footer>
 		<div class="wrap-footer">

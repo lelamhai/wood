@@ -3,16 +3,13 @@ html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
+small, strike, strong, sub, sup, tt, var, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend, caption,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-    margin: 0;
-	padding: 0;
 	border: 0;
     vertical-align: baseline;
     color: inherit;
@@ -27,19 +24,6 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
-}
-
-body {
-	line-height: 1;
-}
-
-ul {
-    padding: 0;
-    margin: 0;
-}
-
-ol, ul {
-	list-style: none;
 }
 
 blockquote, q {
@@ -365,12 +349,12 @@ textarea {
     padding: 0.2em 0;
 }
 /* ================== Wordpress ================== */
-img.alignright { float: right; margin: 0 0 1em 1em; }
+/* img.alignright { float: right; margin: 0 0 1em 1em; }
 img.alignleft { float: left; margin: 0 1em 1em 0; }
 img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 .alignright { float: right; }
 .alignleft { float: left; }
-.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.aligncenter { display: block; margin-left: auto; margin-right: auto; } */
 
 
 
@@ -558,6 +542,7 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
     position: absolute;
     min-width: 148px;
+	padding-left: 0;
 }
 
 .home-menu .navbar-nav>li>.sub-menu>li {
@@ -747,6 +732,45 @@ h1, h2, h3, h4, h5, h6 {
     transition: all ease 0.5s;
     transform: scale(1.1);
 }
+
+.support-customer {
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+}
+
+.support-customer img {
+    width: 128px;
+    height: auto;
+}
+
+.wrap-circle {
+    width: 113px;
+    height: 113px;
+    border-radius: 100%;
+    animation: play 2s ease infinite;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+}
+@keyframes play {
+
+    0% {
+        transform: scale(1);
+    }
+    15% {
+        box-shadow: 0 0 0 5px rgba(231, 62, 91, 0.3);
+    }
+    25% {
+        box-shadow: 0 0 0 10px rgba(231, 62, 91, 0.3), 0 0 0 20px rgba(231, 62, 91, 0.15);
+    }
+    25% {
+        box-shadow: 0 0 0 15px rgba(231, 62, 91, 0.3), 0 0 0 30px rgba(231, 62, 91, 0.15);
+    }
+
+}
+
+
 
 /*================================ Footer ================================*/
 .hr {

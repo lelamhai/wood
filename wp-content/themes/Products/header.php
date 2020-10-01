@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	$version = 1;
+	$version = 10;
 ?>
 <html class="no-js" <?php language_attributes(); ?>>
 	<head>
@@ -36,7 +36,7 @@
 		</div> -->
 
 
-		<div class="container">
+	<div class="container">
     	<div class="header">
 			<div class="home-banner">
 			<div class="row wrap-banner">
@@ -144,5 +144,6 @@
 				</div>
 			</div>
     	</div>
+	</div>
     <div class="main">
 <main>
