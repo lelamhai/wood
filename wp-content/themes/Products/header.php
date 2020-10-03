@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	$version = 10;
+	$version = 14;
 ?>
 <html class="no-js" <?php language_attributes(); ?>>
 	<head>
@@ -34,8 +34,7 @@
 		<!--<div class="img-right">
 			<img src="<?php bloginfo('template_url'); ?>/assets/img/common/img_left.png" alt="">
 		</div> -->
-
-
+		
 	<div class="container">
     	<div class="header">
 			<div class="home-banner">

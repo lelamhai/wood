@@ -2,6 +2,15 @@
     margin-bottom: 45px;
 }
 
+.detail-img-left {
+    margin-bottom: 15px;
+}
+
+.item-small-galley img {
+    width: 100px;
+    height: auto;
+}
+
 .detail-img-left img {
     width: 100%;
     height: auto;

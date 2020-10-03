@@ -7,6 +7,7 @@
 <?php
 get_header();
 ?>
+
             <div class="breadcrumbs">
                 <span><a href="../../">Trang Chủ</a><b> > </b><a href="category/../../"><?php echo $category[0]->name?></a><b> > </b><a><?php the_title();?></a></span>
             </div>
@@ -14,9 +15,40 @@ get_header();
             <div class="wrap-detail-content">
                 <div class="row">
                     <div class="col-md-5 col-sm-5 col-xs-12">
-                        <div class="detail-img-left">
-                            <img src="<?php the_post_thumbnail_url('item_detail_458x250'); ?>" alt="">
-                        </div>
+                        <?php 
+                            $images = get_field('gallery');
+                        ?>
+                           <?php
+                           if( $images ):
+                            ?><div class="detail-img-left slider slider-for"><?php
+                                foreach( $images as $image ):
+                                    ?>
+                                        <div >
+                                            <img src="<?php echo esc_url($image['sizes']['item_detail_458x250']); ?>" alt="">
+                                        </div>
+                                    <?php
+                                endforeach;
+                            ?></div><?php
+                           endif;
+                           ?>
+                            
+                       
+                            <?php
+                            $images = get_field('gallery');
+                            if( $images ):
+                                ?> 
+                                    <div class="detail-small slider slider-nav">
+                                <?php
+                                    foreach( $images as $image ):
+                                        ?>
+                                            <div class="item-small-galley">
+                                                <img src="<?php echo esc_url($image['sizes']['item_239x238']); ?>" alt="">
+                                            </div>
+                                        <?php
+                                    endforeach;
+                                ?></div><?php
+                            endif;
+                           ?>
                     </div>
                     <div class="col-md-7 col-sm-7 col-xs-12">
                         <div class="detail-content-right">
@@ -39,8 +71,6 @@ get_header();
                               }
                           ?>
 							
-							
-                            
 								
                             <div class="description-short">
                                 <?php echo get_field("description-short", $post->ID );?>
@@ -90,3 +120,4 @@ get_header();
             </div>
 <?php
 get_footer();
+

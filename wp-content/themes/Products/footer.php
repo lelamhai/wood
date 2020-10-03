@@ -42,7 +42,24 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo get_bloginfo("template_directory"); ?>/assets/slick/slick.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_bloginfo("template_directory"); ?>/assets/js/main.js"></script>
-
+	<script>
+	
+	$('.slider-for').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '.slider-nav'
+		});
+		$('.slider-nav').slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		asNavFor: '.slider-for',
+		dots: false,
+		centerMode: true,
+		focusOnSelect: true
+		});
+	</script>
 
 	<script type="text/javascript">
 		var page = 3;
