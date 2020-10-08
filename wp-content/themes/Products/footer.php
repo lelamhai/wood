@@ -1,11 +1,37 @@
 
-	<div class="support-customer">
-		<img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_support.png" alt="" class="img-circle" width="135px">
-		
-		<div class="wrap-circle">
-			
+	<!-- <div class="support-customer">
+		 <img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_support.png" alt="" class="img-circle" width="135px">
+		<div class="wrap-circle"></div> -->
+
+		<!-- <div class="wrap-support">
+			<ul>
+				<li><a href=""><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_phone.png" alt=""></a></li>
+				<li><a href=""><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_phone.png" alt=""></a></li>
+				<li><a href=""><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_phone.png" alt=""></a></li>
+			</ul>
+		</div> 
+	</div> -->
+
+
+		<div id="centre">
+			<div class="middle circle">
+				<img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_support.png" alt="" class="img-circle" width="120px" height="120px">
+			</div>
+			<div class="outer circle at-8-oclock">
+				<a href="tel:0708220000">
+					<img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_phone.png" alt="" width="40" height="40">
+				</a>
+			</div>
+			<div class="outer circle at-10-oclock">
+				<img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_messengerfb.png" alt=""width="40" height="40">
+			</div>
+			<div class="outer circle at-12-oclock">
+				<img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_gmail.png" alt="" width="40" height="40">
+			</div>
 		</div>
-	</div>
+
+
+
 </div>
 	<footer>
 		<div class="wrap-footer">
@@ -107,6 +133,10 @@
 				});
 			});
 		});
+	</script>
+
+	<script>
+
 	</script>
 
 	<?php wp_footer(); ?>

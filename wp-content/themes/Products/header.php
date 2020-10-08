@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	$version = 14;
+	$version = 21;
 ?>
 <html class="no-js" <?php language_attributes(); ?>>
 	<head>
@@ -25,6 +25,10 @@
 		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/detail/responsive.css?v=<?php echo $version?>">
 
 		<?php wp_head(); ?>
+  		<meta property="fb:app_id" content="512715557539" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="<?php the_title(); ?>" />            
+		<meta property="og:image" content="<?php if ( has_post_thumbnail() ) { echo the_post_thumbnail_url();}  ?>" />
 	</head>
 	<body>
 		<!-- <div class="img-left">

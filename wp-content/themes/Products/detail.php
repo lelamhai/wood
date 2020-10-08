@@ -49,6 +49,8 @@ get_header();
                                 ?></div><?php
                             endif;
                            ?>
+
+                           
                     </div>
                     <div class="col-md-7 col-sm-7 col-xs-12">
                         <div class="detail-content-right">
@@ -58,7 +60,7 @@ get_header();
                               if(get_field( "check-contact", $post->ID ))
                               {
                                 ?>
-                                  <div class="price"><span><b class="title-price"> Giá bán: </b> <b class="value-price">Liên hệ</span></div>
+                                  <div class="price"><span><b class="title-price"> Giá bán: </b> <b class="value-price">Liên hệ</b></span></div>
 
                                 <?php
                               } else {
@@ -90,7 +92,14 @@ get_header();
 
                 <div class="tab-content">
                     <div id="detail" class="tab-pane fade in active">
-                        <?php the_content();?>
+                        <div><?php the_content();?></div>
+                        <div class="share">
+                            <span>
+                                <div class="facebook">Chia sẻ: 
+                                    <a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&t=<?php the_title(); ?>" target="blank"><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_facebook.png" alt=""></a>
+                                </div>
+                            </span>
+                        </div>
                     </div>
 
                     <div id="contact" class="tab-pane fade">

@@ -349,12 +349,12 @@ textarea {
     padding: 0.2em 0;
 }
 /* ================== Wordpress ================== */
-/* img.alignright { float: right; margin: 0 0 1em 1em; }
+img.alignright { float: right; margin: 0 0 1em 1em; }
 img.alignleft { float: left; margin: 0 1em 1em 0; }
 img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 .alignright { float: right; }
 .alignleft { float: left; }
-.aligncenter { display: block; margin-left: auto; margin-right: auto; } */
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 
 
 
@@ -733,6 +733,8 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.1);
 }
 
+/* Support  */
+
 .support-customer {
     position: fixed;
     right: 5%;
@@ -772,6 +774,52 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+
+
+@keyframes rotate {
+	0%, 30% {
+		transform: rotate(0deg) translateY(-120px) rotate(0deg);
+	}
+}
+
+#centre {
+	position: fixed;
+    right: 10%;
+    bottom: 10%;
+    transform: rotateZ(0.01deg); /* IE 10 bug */
+    z-index: 1;
+}
+
+.circle {
+	border-radius: 50%;
+	position: absolute;
+}
+
+.middle {
+    background-color: fuchsia;
+    left: -50px;
+    top: -50px;
+}
+
+.outer {
+	animation: rotate 2s ease-out 1;
+}
+
+.at-8-oclock {
+	background-color: red;
+	transform: rotate(-90deg) translateY(-120px) rotate(90deg);
+}
+
+.at-10-oclock {
+	background-color: yellow;
+	transform: rotate(-45deg) translateY(-120px) rotate(45deg);
+}
+
+.at-12-oclock {
+	background-color: green;
+	transform: rotate(0deg) translateY(-120px) rotate(0deg);
+	z-index: 2;
+}
 
 /*================================ Footer ================================*/
 .hr {
