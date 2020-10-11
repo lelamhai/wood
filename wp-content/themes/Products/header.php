@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	$version = 21;
+	$version = 22;
 ?>
 <html class="no-js" <?php language_attributes(); ?>>
 	<head>

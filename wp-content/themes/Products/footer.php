@@ -25,11 +25,57 @@
 			<div class="outer circle at-10-oclock">
 				<img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_messengerfb.png" alt=""width="40" height="40">
 			</div>
-			<div class="outer circle at-12-oclock">
+			<div class="outer circle at-12-oclock" data-toggle="modal" data-target="#exampleModal">
 				<img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_gmail.png" alt="" width="40" height="40">
 			</div>
 		</div>
 
+<!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v8.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="101598075049397"
+  logged_in_greeting="Chào bạn!"
+  logged_out_greeting="Chào bạn!">
+      </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+	  	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+	  	<h5 class="modal-title" id="exampleModalLabel">Tư Vấn</h5>
+        
+      	</div>
+      		<div class="modal-body">
+	  			<div class="wrap-form">
+                    <?php echo do_shortcode( '[contact-form-7 id="64" title="Liên Hệ"]' ); ?>
+                </div>
+      		</div>
+    	</div>
+  </div>
+</div>
 
 
 </div>

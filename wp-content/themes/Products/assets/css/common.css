@@ -821,6 +821,12 @@ h1, h2, h3, h4, h5, h6 {
 	z-index: 2;
 }
 
+
+.modal-body .buttonSubmit  {
+    font-size: 15px;
+    padding: 8px 25px;
+}
+
 /*================================ Footer ================================*/
 .hr {
     display: none;
