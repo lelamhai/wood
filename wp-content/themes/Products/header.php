@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	$version = 22;
+	$version = 23;
 ?>
 <html class="no-js" <?php language_attributes(); ?>>
 	<head>
@@ -38,7 +38,7 @@
 		<!--<div class="img-right">
 			<img src="<?php bloginfo('template_url'); ?>/assets/img/common/img_left.png" alt="">
 		</div> -->
-		
+		<div id="font-test">Tôn vinh ngôi nhà việt</div>
 	<div class="container">
     	<div class="header">
 			<div class="home-banner">
@@ -52,16 +52,16 @@
 				<div class="col-md-7 col-sm-7 col-xs-12">
 					<div class="banner-info">
 
-						<div class="banner-title">
-							<h2>CÔNG TY TNHH NỘI THẤT LIÊN KẾT HD</h2>
-						</div>
-
 						<div class="bannrer-text-red">
-							<h1 class="text-outline">NỘI THẤT HD</h1>
+							<h1>NỘI THẤT HD</h1>
+						</div>
+						
+						<div class="banner-title">
+							<h2>TÔN VINH NGÔI NHÀ VIỆT</h2>
 						</div>
 
 						<div class="wrap-banner-phone">
-							<span><span><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_call.png" alt=""></span><span class="phone-text">0708220000</span></span>
+							<span><span><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_call.png" alt=""></span><span class="phone-text"><a href="tel:0708220000">0708220000</a></span></span>
 						</div>
 
 						<div class="wrap-banner-address">
@@ -76,6 +76,19 @@
 							<div class="text-search"><input type="text" name="search" placeholder="Tìm kiếm"></div>
 							<div class="button-search"><button>Tìm</button></div>
 						</form>
+						<div class="social-nextwork">
+							<div class="banner-facebook">
+								<a href="https://www.facebook.com/N%E1%BB%99i-Th%E1%BA%A5t-HD-101598075049397" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_facebook.png" alt=""></a>
+							</div>
+							
+							<div class="banner-youtube">
+								<a href="https://www.youtube.com/channel/UCIv0ZK2rEl2zTJ0PMg6x-YA/?guided_help_flow=5" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_youtube.png" alt=""></a>
+							</div>
+							
+							<div class="banner-zalo">
+								<a href="" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_zalo.png" alt=""></a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
