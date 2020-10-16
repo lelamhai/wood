@@ -7,7 +7,6 @@
 <?php
 get_header();
 ?>
-
             <div class="breadcrumbs">
                 <span><a href="../../">Trang Chủ</a><b> > </b><a href="category/../../"><?php echo $category[0]->name?></a><b> > </b><a><?php the_title();?></a></span>
             </div>
@@ -17,18 +16,32 @@ get_header();
                     <div class="col-md-5 col-sm-5 col-xs-12">
                         <?php 
                             $images = get_field('gallery');
+                            
                         ?>
                            <?php
                            if( $images ):
-                            ?><div class="detail-img-left slider slider-for"><?php
-                                foreach( $images as $image ):
+                            ?>
+                            
+                            
+                            <div class="detail-img-left slider slider-for"><?php
+
+                                while( have_rows('gallery') ) : the_row();
+
+                                    // Load sub field value.
+                                    $sub_value = get_sub_field('image');
                                     ?>
-                                        <div >
-                                            <img src="<?php echo esc_url($image['sizes']['item_detail_458x250']); ?>" alt="">
-                                        </div>
+                                    <div>
+                                        <img src="<?php echo esc_url($sub_value['sizes']['item_detail_458x250']); ?>" alt="">
+                                    </div>
                                     <?php
-                                endforeach;
-                            ?></div><?php
+                                    // var_dump($sub_value);exit;
+                                    // Do something...
+
+                                // End loop.
+                                endwhile;
+                            ?>
+                        </div>
+                            <?php
                            endif;
                            ?>
                             
@@ -37,16 +50,26 @@ get_header();
                             $images = get_field('gallery');
                             if( $images ):
                                 ?> 
-                                    <div class="detail-small slider slider-nav">
+                            <div class="detail-small slider slider-nav">
                                 <?php
-                                    foreach( $images as $image ):
-                                        ?>
-                                            <div class="item-small-galley">
-                                                <img src="<?php echo esc_url($image['sizes']['item_239x238']); ?>" alt="">
-                                            </div>
-                                        <?php
-                                    endforeach;
-                                ?></div><?php
+                                    while( have_rows('gallery') ) : the_row();
+                                    // Load sub field value.
+                                    $sub_value = get_sub_field('image');
+                                    ?>
+                                        <div class="item-small-galley">
+                                            <img src="<?php echo esc_url($sub_value['sizes']['item_239x238']); ?>" alt="">
+                                        </div>
+                                    <?php
+                                    // var_dump($sub_value);exit;
+                                    // Do something...
+
+                                // End loop.
+                                endwhile;
+                                    
+                                ?>
+                            </div>
+                                
+                                <?php
                             endif;
                            ?>
 
@@ -72,11 +95,40 @@ get_header();
                                   }
                               }
                           ?>
-							
-								
-                            <div class="description-short">
-                                <?php echo get_field("description-short", $post->ID );?>
-                            </div>
+                            
+                            <?php
+                            $images = get_field('gallery');
+                            $id = 1;
+                            $postFirst = true;
+                            if( $images ):
+                                ?>
+                                    <div class="wrap-description">
+                                        <?php
+                                        while( have_rows('gallery') ) : the_row();
+                                            $sub_value = get_sub_field('description');
+                                            if($postFirst)
+                                            {
+                                                ?>
+                                                    <div class="description-short active-description" id ="id-<?php echo $id?>">
+                                                        <?php echo $sub_value;?>
+                                                    </div>
+                                                <?php
+                                                $postFirst = false;
+                                            } else {
+                                                ?>
+                                                    <div class="description-short" id ="id-<?php echo $id?>">
+                                                        <?php echo $sub_value;?>
+                                                    </div>
+                                                <?php
+                                            }
+                                           
+                                            $id ++;
+                                        endwhile;
+                                ?></div><?php
+                            endif;
+                           ?>
+
+
                         </div>
                     </div>
                 </div>

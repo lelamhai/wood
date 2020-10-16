@@ -42,10 +42,17 @@
     color: red;
 }
 
-
 .custom-nav-tabs a {
     text-transform: uppercase;
     font-size: 15px;
+}
+
+.description-short {
+    display: none;
+}
+
+.active-description {
+    display: block;
 }
 
 /* ====================== Tabs ========================*/

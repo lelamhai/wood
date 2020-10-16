@@ -9,7 +9,7 @@
 				<li><a href=""><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_phone.png" alt=""></a></li>
 				<li><a href=""><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_phone.png" alt=""></a></li>
 			</ul>
-		</div> 
+		</div>
 	</div> -->
 
 
@@ -66,7 +66,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
 	  	<h5 class="modal-title" id="exampleModalLabel">Tư Vấn Khách Hàng</h5>
-        
+
       	</div>
       		<div class="modal-body">
 	  			<div class="wrap-form">
@@ -86,8 +86,8 @@
 				<div class="col-md-5 col-sm-5 col-xs-12 col-footer">
 
 					<div class="wrap-info">
-						<h3>CÔNG TY TNHH NỘI THẤT LIÊN KẾT HD</h3>
-						
+						<h3>CÔNG TY TNHH NỘI THẤT HD</h3>
+
 						<div class="hr-footer"></div>
 
 						<P class="hotline">HOTLINE: 0708220000</P>
@@ -107,15 +107,15 @@
 					</div>
 				</div>
 			</div>
-		
+
 		</div>
 	</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo get_bloginfo("template_directory"); ?>/assets/slick/slick.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_bloginfo("template_directory"); ?>/assets/js/main.js"></script>
+
 	<script>
-	
 	$('.slider-for').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -133,6 +133,24 @@
 		});
 	</script>
 
+
+	<script>
+		$(document).ready(function(){
+			$('.slider').on('afterChange', function(event, slick, currentSlide){
+				var id = currentSlide + 1;
+				var elements = document.querySelectorAll('.description-short');
+				for (var i = 0; i < elements.length; i++) {
+					elements[i].classList.remove('active-description');
+				}
+
+				var element = document.getElementById("id-" + id);
+  				element.classList.add("active-description");
+			});
+		});
+
+	</script>
+
+
 	<script type="text/javascript">
 		var page = 3;
 		jQuery(function($) {
@@ -144,7 +162,7 @@
 				'category' : category,
 				'security': '<?php echo wp_create_nonce("load_more_posts_policy"); ?>'
 				};
-				
+
 				$.post("<?php echo admin_url( 'admin-ajax.php' ); ?>", data, function(response) {
 					page++;
 					var $res = JSON.parse(response);
@@ -181,10 +199,11 @@
 		});
 	</script>
 
-	<script>
-
-	</script>
-
+    <script>
+        $( "#middle" ).click(function() {
+          console.log("click");
+        });
+    </script>
 	<?php wp_footer(); ?>
 </body>
 </html>

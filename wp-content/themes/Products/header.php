@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	$version = 23;
+	$version = 27;
 ?>
 <html class="no-js" <?php language_attributes(); ?>>
 	<head>
@@ -38,7 +38,6 @@
 		<!--<div class="img-right">
 			<img src="<?php bloginfo('template_url'); ?>/assets/img/common/img_left.png" alt="">
 		</div> -->
-		<div id="font-test">Tôn vinh ngôi nhà việt</div>
 	<div class="container">
     	<div class="header">
 			<div class="home-banner">
@@ -57,7 +56,7 @@
 						</div>
 						
 						<div class="banner-title">
-							<h2>TÔN VINH NGÔI NHÀ VIỆT</h2>
+						    <h2>Tôn vinh ngôi nhà Việt</h2>
 						</div>
 
 						<div class="wrap-banner-phone">
