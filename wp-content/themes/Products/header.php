@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	$version = 36;
+	$version = 39;
 ?>
 <html class="no-js" <?php language_attributes(); ?>>
 	<head>
@@ -86,8 +86,8 @@
 								<a href="https://www.youtube.com/channel/UCIv0ZK2rEl2zTJ0PMg6x-YA/?guided_help_flow=5" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_youtube.png" alt=""></a>
 							</div>
 							
-							<div class="banner-zalo">
-								<a href="" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_zalo.png" alt=""></a>
+							<div class="banner-zalo" data-toggle="modal" data-target="#zaloexampleModal">
+								<a><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_zalo.png" alt=""></a>
 							</div>
 						</div>
 					</div>

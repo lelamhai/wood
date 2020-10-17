@@ -46,23 +46,44 @@
 </div>
 
 
+<div class="modal fade" id="zaloexampleModal" tabindex="-1" role="dialog" aria-labelledby="zaloexampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+	  	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+	  	<h5 class="modal-title" id="zaloexampleModalLabel">Quét Mã QR Code</h5>
+
+      	</div>
+      		<div class="modal-body" style="text-align: center">
+	  			<img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/img_qrcode.jpeg" alt="">
+      		</div>
+    	</div>
+  </div>
+</div>
+
+
 </div>
 	<footer>
 		<div class="wrap-footer">
 			<div class="row">
 
-				<div class="col-md-5 col-sm-5 col-xs-12 col-footer">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-footer">
 
 					<div class="wrap-info">
 						<h1>NỘI THẤT HD</h1>
 						<div class="footer-social">
-							
+							<div class="banner-facebook">
+								<a href="https://www.facebook.com/N%E1%BB%99i-Th%E1%BA%A5t-HD-101598075049397" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_facebook.png" alt=""></a>
+							</div>
+
 							<div class="banner-youtube">
 								<a href="https://www.youtube.com/channel/UCIv0ZK2rEl2zTJ0PMg6x-YA/?guided_help_flow=5" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_youtube.png" alt=""></a>
 							</div>
 							
-							<div class="banner-zalo">
-								<a href="" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_zalo.png" alt=""></a>
+							<div class="banner-zalo" data-toggle="modal" data-target="#zaloexampleModal">
+								<a><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_zalo.png" alt=""></a>
 							</div>
 						</div>
 						<div class="hr-footer"></div>
@@ -74,7 +95,7 @@
 
 				</div>
 
-				<div class="col-md-1 col-sm-1"></div>
+				
 
 				<div class="col-md-6 col-sm-6 col-xs-12 col-footer">
 					<div class="wrao-googleMap">
@@ -92,7 +113,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo get_bloginfo("template_directory"); ?>/assets/slick/slick.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_bloginfo("template_directory"); ?>/assets/js/main.js"></script>
-
+	<script src="https://sp.zalo.me/plugins/sdk.js"></script>
 	<script>
 	$('.slider-for').slick({
 		slidesToShow: 1,
@@ -186,7 +207,7 @@
 	</div>
 		<div class="support-customer">
 		<div class="wrap-call">
-			<a href="tel:0708220000">
+			<a href="tel:0901573345">
                 <img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_phone.png" alt="" width="60" height="60">
             </a>
 		</div>
