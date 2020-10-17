@@ -1,38 +1,6 @@
-
-	<!-- <div class="support-customer">
-		 <img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_support.png" alt="" class="img-circle" width="135px">
-		<div class="wrap-circle"></div> -->
-
-		<!-- <div class="wrap-support">
-			<ul>
-				<li><a href=""><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_phone.png" alt=""></a></li>
-				<li><a href=""><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_phone.png" alt=""></a></li>
-				<li><a href=""><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_phone.png" alt=""></a></li>
-			</ul>
-		</div>
-	</div> -->
-
-
-		<div id="centre">
-			<div class="middle circle">
-				<img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_support.png" alt="" class="img-circle" width="120px" height="120px">
-			</div>
-			<div class="outer circle at-8-oclock">
-				<a href="tel:0708220000">
-					<img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_phone.png" alt="" width="40" height="40">
-				</a>
-			</div>
-			<div class="outer circle at-10-oclock">
-				<img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_messengerfb.png" alt=""width="40" height="40">
-			</div>
-			<div class="outer circle at-12-oclock" data-toggle="modal" data-target="#exampleModal">
-				<img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_gmail.png" alt="" width="40" height="40">
-			</div>
-		</div>
-
 <!-- Load Facebook SDK for JavaScript -->
-      <div id="fb-root"></div>
-      <script>
+     
+<script>
         window.fbAsyncInit = function() {
           FB.init({
             xfbml            : true,
@@ -86,12 +54,22 @@
 				<div class="col-md-5 col-sm-5 col-xs-12 col-footer">
 
 					<div class="wrap-info">
-						<h3>CÔNG TY TNHH NỘI THẤT HD</h3>
-
+						<h1>NỘI THẤT HD</h1>
+						<div class="footer-social">
+							
+							<div class="banner-youtube">
+								<a href="https://www.youtube.com/channel/UCIv0ZK2rEl2zTJ0PMg6x-YA/?guided_help_flow=5" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_youtube.png" alt=""></a>
+							</div>
+							
+							<div class="banner-zalo">
+								<a href="" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_zalo.png" alt=""></a>
+							</div>
+						</div>
 						<div class="hr-footer"></div>
 
-						<P class="hotline">HOTLINE: 0708220000</P>
-						<P class="address">ĐỊA CHỈ: 86 CHU VĂN AN - P.26 - Q.BÌNH THẠNH - TP.HCM</P>
+						<P class="hotline"><span>HOTLINE:</span> 0901573345 - 0931573345</P>
+						
+						<P class="address"><span>ĐỊA CHỈ:</span> 86 CHU VĂN AN - P.26 - Q.BÌNH THẠNH - TP.HCM</P>
 					</div>
 
 				</div>
@@ -205,5 +183,20 @@
         });
     </script>
 	<?php wp_footer(); ?>
+	</div>
+		<div class="support-customer">
+		<div class="wrap-call">
+			<a href="tel:0708220000">
+                <img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_phone.png" alt="" width="60" height="60">
+            </a>
+		</div>
+		<div class="wrap-mail" data-toggle="modal" data-target="#exampleModal">
+			<img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_gmail.png" alt="" width="60" height="60">
+		</div>
+		<div class="wrap-message">
+			<img src="<?php echo get_bloginfo("template_directory"); ?>/assets/img/common/icon_messengerfb.png" alt="" width="60" height="60">
+		</div>
+	</div> 
+	<div id="fb-root"></div>
 </body>
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <?php
-	$version = 27;
+	$version = 36;
 ?>
 <html class="no-js" <?php language_attributes(); ?>>
 	<head>
 
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+		<link rel="shortcut icon" href="http://www.example.com/myicon.ico" />
+		<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css?v=<?php echo $version?>">
 
@@ -60,7 +62,7 @@
 						</div>
 
 						<div class="wrap-banner-phone">
-							<span><span><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_call.png" alt=""></span><span class="phone-text"><a href="tel:0708220000">0708220000</a></span></span>
+							<span><span><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_call.png" alt=""></span><span class="phone-text">0901573345 - 0931573345</span></span>
 						</div>
 
 						<div class="wrap-banner-address">
@@ -134,7 +136,7 @@
 					</div>
 		
 					<div class="item">
-					<img src="<?php bloginfo('template_url'); ?>/assets/img/home/2.jpg" alt="">
+					<img src="<?php bloginfo('template_url'); ?>/assets/img/home/n2.jpg" alt="">
 					</div>
 		
 					<div class="item">
@@ -142,7 +144,7 @@
 					</div>
 					
 					<div class="item">
-					<img src="<?php bloginfo('template_url'); ?>/assets/img/home/4.jpg" alt="">
+					<img src="<?php bloginfo('template_url'); ?>/assets/img/home/n4.jpeg" alt="">
 					</div>
 		
 				</div>
