@@ -3,6 +3,10 @@
     src:url("http://local.wood.com/wp-content/themes/Products/assets/fonts/UTMAquarelle.woff") format("woff");
 }
 
+@font-face{
+    font-family:"UTMCooperBlack";
+    src:url("http://local.wood.com/wp-content/themes/Products/assets/fonts/UTMCooperBlack.woff") format("woff");
+}
 /* ================ Reset css ================ */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -415,10 +419,10 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-.banner-title h2 {
+.banner-title h1 {
     font-family:"UTMAquarelle";
     color: #0000ff;
-    text-shadow: 1px 1px #000000;
+    text-shadow: 1px 1px #666666;
 }
 
 .bannrer-text-red {
@@ -427,8 +431,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .bannrer-text-red h1 {
     margin-top: 0;
-    font-family: 'Alfa Slab One', cursive;
-    letter-spacing: 5px;
+    font-family:"UTMCooperBlack";
     text-shadow: 1px 1px #000000;
 }
 
@@ -447,6 +450,10 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     padding-top: 10px;
+}
+
+.modal-body img {
+    width: 100%;
 }
 
 .banner-youtube {
@@ -476,26 +483,37 @@ h1, h2, h3, h4, h5, h6 {
     height: 30px;
 }
 
+.header-col7-custome {
+    padding: 0;
+}
+
 .wrap-banner-phone {
     float: left;
-    width: 40%;
+    width: 36%;
 }
 
 .wrap-banner-address {
     float: left;
-    width: 60%;
+    width: 64%;
+}
+
+.content-phone,
+.content-address {
+    display: flex;
+    align-items: center;
+    justify-items: center;
 }
 
 .phone-text {
     color: #fff;
-    font-size: 15px;
+    font-size: 16px;
     padding-left: 5px;
     font-weight: bold;
 }
 
 .address-text {
     color: #fff;
-    font-size: 15px;
+    font-size: 16px;
     padding-left: 5px;
     font-weight: bold;
 }
@@ -839,6 +857,8 @@ footer {
 .footer-social {
     display: inline-flex;
     padding-bottom: 15px;
+    width: 100%;
+    padding-left: 90px;
 }
 
 .wrap-footer .col-md-4:nth-child(2) {
@@ -848,7 +868,6 @@ footer {
 
 .wrap-footer .col-footer {
     padding: 15px 30px;
-    text-align: center;
 }
 
 .wrap-image-footer {
@@ -870,15 +889,17 @@ footer {
 }
 
 .wrap-info h1 {
-    font-family: 'Alfa Slab One', cursive;
+    font-family:"UTMCooperBlack";
     letter-spacing: 5px;
     text-shadow: 1px 1px #000000;
     color: #ff0000;
+    margin-top: 0;
+
 }
 
 .wrap-info p {
     padding-top: 10px;
-    font-size: 13px;
+    font-size: 15px;
     margin-bottom: 0;
 }
 
@@ -889,11 +910,12 @@ footer {
 
 .hr-footer {
     border-bottom: 1px solid #23527c;
-    width: 150px;
-    margin: auto;
-    margin-bottom: 15px;
+    width: 170px;
+    margin-bottom: 5px;
+    margin-left: 85px;
 }
 
+.gmail span,
 .hotline span,
 .address span {
     font-weight: bold;
@@ -914,7 +936,6 @@ footer {
    Responsive CSS Landscape Tablet
    ========================================================================== */
    @media only screen and (min-width: 960px) and (max-width: 1240px) {
-
     .header-logo img {
         width: 100%;
         height: auto;
@@ -955,6 +976,19 @@ footer {
 
     .wrap-content .item-title {
         font-size: 15px;
+    }
+
+    .wrap-footer .footer-content-left {
+        padding-right: 0;
+    }
+
+    .wrap-footer .footer-content-right {
+        padding-left: 0;
+    }
+
+    .address-text,
+    .phone-text {
+        font-size: 10px;
     }
 }
 
@@ -1000,6 +1034,19 @@ footer {
     .wrap-content .item-title {
         font-size: 15px;
     }
+
+    .wrap-footer .footer-content-left {
+        padding-right: 0;
+    }
+
+    .wrap-footer .footer-content-right {
+        padding-left: 0;
+    }
+
+    .address-text,
+    .phone-text {
+        font-size: 10px;
+    }
 }
 
 
@@ -1013,8 +1060,8 @@ footer {
         height: auto;
     }
 
-    .banner-title h2 {
-        font-size: 25px;
+    .banner-title h1 {
+        font-size: 23px;
     }
     
     .text-outline {
@@ -1029,12 +1076,9 @@ footer {
         width: 100%;
     }
 
-    .phone-text {
-        font-size: 10px;
-    }
-
+    .phone-text,
     .address-text {
-        font-size: 10px;
+        font-size: 8px;
     }
 
     .container-fluid-custom .navbar-header button {
@@ -1081,6 +1125,18 @@ footer {
 
     .wrap-footer .col-md-4 {
         padding: 15px 30px;
+    }
+   
+    .footer-social {
+        padding-left: 0;
+    }
+
+    .hr-footer {
+        margin-left: 0;
+    }
+
+    .bannrer-text-red h1 {
+        font-size: 28px;
     }
  }
 
@@ -1164,4 +1220,41 @@ footer {
         padding-right: 30px;
     }
 
+    .banner-info {
+        text-align: center;
+    }
+
+    .address-text,
+    .phone-text {
+        font-size: 12px;
+    }
+
+    .wrap-banner-address,
+    .wrap-banner-phone {
+        padding: 5px 30px;
+    }
+
+    .banner-youtube {
+        padding: 0 15px;
+    }
+
+    .social-nextwork {
+        padding-top: 5px;
+    }
+
+    .wrap-info h1 {
+        font-size: 32px;
+    }
+
+    .hr-footer {
+        margin-left: 68px;
+    }
+
+    .custom-nav-tabs a {
+        font-size: 12px !important;
+    }
+
+    .banner-title h1 {
+        font-size: 30px;
+    }
 }

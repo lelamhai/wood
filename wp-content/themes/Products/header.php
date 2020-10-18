@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	$version = 39;
+	$version = 44;
 ?>
 <html class="no-js" <?php language_attributes(); ?>>
 	<head>
@@ -44,13 +44,13 @@
     	<div class="header">
 			<div class="home-banner">
 			<div class="row wrap-banner">
-				<div class="col-md-2 col-sm-2 col-xs-12">
+				<div class="col-md-2 col-sm-2 col-xs-12 ">
 					<div class="header-logo">
 						<a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/common/img_logo.svg" alt=""></a>
 					</div>
 				</div>
 				
-				<div class="col-md-7 col-sm-7 col-xs-12">
+				<div class="col-md-7 col-sm-7 col-xs-12 header-col7-custome">
 					<div class="banner-info">
 
 						<div class="bannrer-text-red">
@@ -58,15 +58,19 @@
 						</div>
 						
 						<div class="banner-title">
-						    <h2>Tôn vinh ngôi nhà Việt</h2>
+						    <h1>Tôn vinh ngôi nhà Việt</h1>
 						</div>
 
 						<div class="wrap-banner-phone">
-							<span><span><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_call.png" alt=""></span><span class="phone-text">0901573345 - 0931573345</span></span>
+							<span class="content-phone">
+								<span><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_call.png" alt=""></span><span class="phone-text">0901573345 - 0931573345</span>
+							</span>
 						</div>
 
 						<div class="wrap-banner-address">
-							<span><span ><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_home.png" alt=""></span><span class="address-text">86 CHU VĂN AN - P.26 - Q.BÌNH THẠNH - TP.HCM</span></span>
+							<span class="content-address">
+								<span ><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_home.png" alt=""></span><span class="address-text">86 CHU VĂN AN - P.26 - Q.BÌNH THẠNH - TP.HCM</span>
+							</span>
 						</div>
 						
 					</div>

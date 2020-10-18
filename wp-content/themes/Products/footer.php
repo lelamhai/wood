@@ -69,7 +69,7 @@
 		<div class="wrap-footer">
 			<div class="row">
 
-				<div class="col-md-6 col-sm-6 col-xs-12 col-footer">
+				<div class="col-md-5 col-sm-6 col-xs-12 col-footer footer-content-left">
 
 					<div class="wrap-info">
 						<h1>NỘI THẤT HD</h1>
@@ -81,23 +81,23 @@
 							<div class="banner-youtube">
 								<a href="https://www.youtube.com/channel/UCIv0ZK2rEl2zTJ0PMg6x-YA/?guided_help_flow=5" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_youtube.png" alt=""></a>
 							</div>
-							
+									
 							<div class="banner-zalo" data-toggle="modal" data-target="#zaloexampleModal">
 								<a><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_zalo.png" alt=""></a>
 							</div>
 						</div>
 						<div class="hr-footer"></div>
-
 						<P class="hotline"><span>HOTLINE:</span> 0901573345 - 0931573345</P>
-						
-						<P class="address"><span>ĐỊA CHỈ:</span> 86 CHU VĂN AN - P.26 - Q.BÌNH THẠNH - TP.HCM</P>
+						<P class="gmail"><span>EMAIL:</span> noithatlkhd@gmail.com</P>
+						<P class="address"><span>ĐỊA CHỈ:</span> 86 Chu Văn An - P.26 - TP.HCM</P>
 					</div>
 
 				</div>
 
-				
+				<div class="col-md-1">
+				</div>
 
-				<div class="col-md-6 col-sm-6 col-xs-12 col-footer">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-footer footer-content-right">
 					<div class="wrao-googleMap">
 					<iframe
 						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.008500458135!2d106.70740961533426!3d10.810660361515689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752897d84afee7%3A0x8379470bd61ad378!2zODYgQ2h1IFbEg24gQW4sIFBoxrDhu51uZyAyNiwgQsOsbmggVGjhuqFuaCwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1598722145188!5m2!1sen!2s"

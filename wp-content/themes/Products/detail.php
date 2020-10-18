@@ -152,7 +152,7 @@ get_header();
                                     <a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&t=<?php the_title(); ?>" target="blank"><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_facebook.png" alt=""></a>
                                 </div>
                                 <div class="zalo-share-button" data-href="<?php the_permalink();?>" data-oaid="579745863508352884" data-layout="2" data-color="blue" data-customize=true>
-                                    <a href="">
+                                    <a>
                                         <img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_zalo.png" alt="">
                                     </a>
                                 </div>
