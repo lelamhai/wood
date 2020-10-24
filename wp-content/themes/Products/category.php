@@ -9,9 +9,13 @@ get_header();
 
 $posts_per_page = 8;
 $queried_category = get_term( get_query_var('cat'), 'category' );
+
+$getParentID = get_term( get_query_var('cat'));
+$parentSlug = get_category($getParentID->parent);
 ?>
+
             <div class="breadcrumbs">
-                <span><a href="../../">Trang Chủ</a><b> > </b><a><?php echo $queried_category->name ?></a></span>
+                <span><a href="<?php echo home_url();?>">Trang Chủ</a><b> > </b><a><?php echo $queried_category->name ?></a></span>
             </div>
 
 <div id="category" style="display:none"><?php echo $queried_category->name ?></div>
@@ -50,7 +54,12 @@ $args = array(
                         <div class="wrap-image hover-zoom ">
                         <img src="<?php the_post_thumbnail_url('item_239x238'); ?>" alt="">
                         </div>
-                        <div class="wrap-content">
+                        <div class="wrap-content <?php 
+                            if($parentSlug->slug === "news")
+                            {
+                                echo "wrap-news";
+                            }
+                        ?>">
                           <div class="item-title">
                             <p><?php the_title();?></p>
                           </div>

@@ -366,14 +366,20 @@ img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 .aligncenter { display: block; margin-left: auto; margin-right: auto; }
 
 
-
-
+/* ================== Bootstrap ================== */
+.modal-open{
+    overflow:auto;
+    padding-right:0 !important;
+}
+ 
+.fb_dialog  {
+    opacity: 0;
+}
 /* ================ Body ================ */
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
 }
-
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
@@ -553,6 +559,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+.home-menu .navbar-default ul .sub-menu .current-menu-parent {
+    background-color: #ffffff;
+}
+
+.home-menu .navbar-default ul .sub-menu .current-menu-parent a {
+    color:  #01a453;
+}
 
 .home-menu .navbar-default ul .current-menu-parent,
 .home-menu .navbar-default ul .current-menu-item {
@@ -855,9 +868,8 @@ footer {
 }
 
 .footer-social {
-    display: inline-flex;
+    display: flex;
     padding-bottom: 15px;
-    width: 100%;
     padding-left: 90px;
 }
 
@@ -912,7 +924,7 @@ footer {
     border-bottom: 1px solid #23527c;
     width: 170px;
     margin-bottom: 5px;
-    margin-left: 85px;
+    margin-left: 90px;
 }
 
 .gmail span,
@@ -1129,6 +1141,8 @@ footer {
    
     .footer-social {
         padding-left: 0;
+        align-items: center;
+        justify-content: center;
     }
 
     .hr-footer {
@@ -1137,6 +1151,10 @@ footer {
 
     .bannrer-text-red h1 {
         font-size: 28px;
+    }
+
+    .wrap-info h1 {
+        text-align: center;
     }
  }
 
@@ -1243,11 +1261,12 @@ footer {
     }
 
     .wrap-info h1 {
-        font-size: 32px;
+        font-size: 34px;
+        text-align: center;
     }
 
     .hr-footer {
-        margin-left: 68px;
+        margin-left: 0;
     }
 
     .custom-nav-tabs a {
@@ -1255,6 +1274,22 @@ footer {
     }
 
     .banner-title h1 {
-        font-size: 30px;
+        font-size: 32px;
+    }
+
+    .wrap-info p {
+        font-size: 12px;
+    }
+
+    .footer-social {
+        padding-left: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content-hr-footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

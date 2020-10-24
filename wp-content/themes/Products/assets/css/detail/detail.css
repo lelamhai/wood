@@ -152,3 +152,12 @@
 .share {
     padding-bottom: 15px;
 }
+
+/* remove padding news */
+.wrap-news {
+    padding-bottom: 0;
+}
+
+.wrap-news .item-title {
+    padding-bottom: 0;
+}

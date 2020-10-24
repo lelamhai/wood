@@ -86,10 +86,12 @@
 								<a><img src="<?php bloginfo('template_url'); ?>/assets/img/common/icon_zalo.png" alt=""></a>
 							</div>
 						</div>
-						<div class="hr-footer"></div>
+						<div class="content-hr-footer">
+							<div class="hr-footer"></div>
+						</div>
 						<P class="hotline"><span>HOTLINE:</span> 0901573345 - 0931573345</P>
 						<P class="gmail"><span>EMAIL:</span> noithatlkhd@gmail.com</P>
-						<P class="address"><span>ĐỊA CHỈ:</span> 86 Chu Văn An - P.26 - TP.HCM</P>
+						<P class="address"><span>ĐỊA CHỈ:</span> 86 Chu Văn An - P.26 - Q.Bình Thạnh - TP.HCM</P>
 					</div>
 
 				</div>
