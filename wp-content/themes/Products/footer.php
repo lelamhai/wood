@@ -1,28 +1,5 @@
 <!-- Load Facebook SDK for JavaScript -->
      
-<script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            xfbml            : true,
-            version          : 'v8.0'
-          });
-        };
-
-        (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
-
-      <!-- Your Chat Plugin code -->
-      <div class="fb-customerchat"
-        attribution=setup_tool
-        page_id="101598075049397"
-  logged_in_greeting="Chào bạn!"
-  logged_out_greeting="Chào bạn!">
-      </div>
 
 
 <!-- Modal -->
@@ -116,25 +93,11 @@
     <script type="text/javascript" src="<?php echo get_bloginfo("template_directory"); ?>/assets/slick/slick.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_bloginfo("template_directory"); ?>/assets/js/main.js"></script>
 	<script src="https://sp.zalo.me/plugins/sdk.js"></script>
-	<script>
-	$('.slider-for').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: false,
-		fade: true,
-		asNavFor: '.slider-nav'
-		});
-		$('.slider-nav').slick({
-		slidesToShow: 3,
-		slidesToScroll: 1,
-		asNavFor: '.slider-for',
-		dots: false,
-		centerMode: true,
-		focusOnSelect: true
-		});
-	</script>
-
-
+	<script type="text/javascript" src="https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.17/src/jquery.ez-plus.js"></script>
+	<script type="text/javascript" src="https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.17/demo/js/web.js?m=20100203"></script>
+	
+	<script type="text/javascript" src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
+	
 	<script>
 		$(document).ready(function(){
 			$('.slider').on('afterChange', function(event, slick, currentSlide){
@@ -200,11 +163,48 @@
 		});
 	</script>
 
-    <script>
-        $( "#middle" ).click(function() {
-          console.log("click");
+
+	<script type="text/javascript">
+		 $(document).ready(function () {
+        	$("#zoom_03").ezPlus({
+                zoomType: "lens",
+                containLensZoom: true,
+                gallery: 'gallery_01',
+				cursor: 'pointer',
+				responsive: true,
+                galleryActiveClass: "active"
+            
+            });
+
+            $("#zoom_03").bind("click", function (e) {
+                var ez = $('#zoom_03').data('ezPlus');
+                ez.closeAll(); //NEW: This function force hides the lens, tint and window
+            	$.fancyboxPlus(ez.getGalleryList());
+                return false;
+            });
         });
+	</script> 
+
+
+	<script>
+      var owl = $('.owl-carousel');
+      owl.owlCarousel({
+        margin: 10,
+        loop: true,
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 2
+          },
+          1000: {
+            items: 3
+          }
+        }
+      })
     </script>
+
 	<?php wp_footer(); ?>
 	</div>
 		<div class="support-customer">

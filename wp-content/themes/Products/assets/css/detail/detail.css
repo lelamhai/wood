@@ -161,3 +161,11 @@
 .wrap-news .item-title {
     padding-bottom: 0;
 }
+
+#gallery_01 {
+    padding-top: 15px;
+}
+
+.zoom-img {
+    width: 100%;
+}

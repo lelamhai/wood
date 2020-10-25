@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	$version = 59;
+	$version = 61;
 ?>
 <html class="no-js" <?php language_attributes(); ?>>
 	<head>
@@ -25,6 +25,12 @@
 
 		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/detail/detail.css?v=<?php echo $version?>">
 		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/detail/responsive.css?v=<?php echo $version?>">
+
+		<link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css" />
+    	<link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
+
+
+		<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.17/css/jquery.ez-plus.css" media="screen" />
 
 		<?php wp_head(); ?>
   		<meta property="fb:app_id" content="512715557539" />
@@ -166,5 +172,6 @@
 			</div>
     	</div>
 	</div>
+
     <div class="main">
 <main>

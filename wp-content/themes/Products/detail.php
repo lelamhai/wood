@@ -10,69 +10,68 @@ get_header();
             <div class="breadcrumbs">
                 <span><a href="<?php echo home_url();?>">Trang Chủ</a><b> > </b><a href="<?php echo home_url();?>./category/products/<?php echo $category[0]->slug?>"><?php echo $category[0]->name?></a><b> > </b><a><?php the_title();?></a></span>
             </div>
-
+           
             <div class="wrap-detail-content">
                 <div class="row">
                     <div class="col-md-5 col-sm-5 col-xs-12">
-                        <?php 
-                            $images = get_field('gallery');
-                            
-                        ?>
-                           <?php
-                           if( $images ):
-                            ?>
-                            
-                            
-                            <div class="detail-img-left slider slider-for"><?php
-
-                                while( have_rows('gallery') ) : the_row();
-
-                                    // Load sub field value.
-                                    $sub_value = get_sub_field('image');
-                                    ?>
-                                    <div>
-                                        <img src="<?php echo esc_url($sub_value['sizes']['item_detail_458x250']); ?>" alt="">
-                                    </div>
-                                    <?php
-                                    // var_dump($sub_value);exit;
-                                    // Do something...
-
-                                // End loop.
-                                endwhile;
-                            ?>
-                        </div>
                             <?php
-                           endif;
-                           ?>
-                            
-                       
-                            <?php
-                            $images = get_field('gallery');
-                            if( $images ):
-                                ?> 
-                            <div class="detail-small slider slider-nav">
-                                <?php
+                                $images = get_field('gallery');
+                                if( $images )
+                                {
+                                    $first = true;
                                     while( have_rows('gallery') ) : the_row();
-                                    // Load sub field value.
                                     $sub_value = get_sub_field('image');
-                                    ?>
-                                        <div class="item-small-galley">
-                                            <img src="<?php echo esc_url($sub_value['sizes']['item_239x238']); ?>" alt="">
-                                        </div>
-                                    <?php
-                                    // var_dump($sub_value);exit;
-                                    // Do something...
+                                    if($first)
+                                    {
+                                        ?>
+                                           <img class="zoom-img" id="zoom_03"
+                                            src="<?php echo $sub_value['sizes']['thumbnail'];?>"
+                                            data-zoom-image="<?php echo $sub_value['sizes']['thumbnail'];?>"
+                                            />
+                                        <?php
+                                        $first = false;
+                                    } 
+                                    endwhile;
+                                }
+                            ?>
+                        
 
-                                // End loop.
-                                endwhile;
-                                    
-                                ?>
-                            </div>
-                                
-                                <?php
-                            endif;
-                           ?>
+                        <div id="gallery_01" class="owl-carousel owl-theme">
+                           
+                            <?php
+                                $images = get_field('gallery');
+                                if( $images )
+                                {
+                                    $flag = true;
+                                    while( have_rows('gallery') ) : the_row();
+                                    $sub_value = get_sub_field('image');
+                                    if($flag)
+                                    {
+                                        ?>
+                                            <a href="#" class="elevatezoom-gallery active" data-update=""
+                                                data-image="<?php echo $sub_value['sizes']['thumbnail'];?>"
+                                                data-zoom-image="<?php echo $sub_value['sizes']['thumbnail'];?>">
+                                                <img src="<?php echo $sub_value['sizes']['item_239x238'];?>"
+                                                    width="100"/>
+                                            </a>
 
+                                        <?php
+                                        $flag = false;
+                                    } else {
+                                        ?>
+                                            <a href="#" class="elevatezoom-gallery" data-update=""
+                                                data-image="<?php echo $sub_value['sizes']['thumbnail'];?>"
+                                                data-zoom-image="<?php echo $sub_value['sizes']['thumbnail'];?>">
+                                                <img src="<?php echo $sub_value['sizes']['item_239x238'];?>"
+                                                    width="100"/>
+                                            </a>
+                                        <?php
+                                    }
+                                    endwhile;
+                                }
+                            ?>
+
+                        </div>
                            
                     </div>
                     <div class="col-md-7 col-sm-7 col-xs-12">
