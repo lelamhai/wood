@@ -43,12 +43,13 @@ get_header();
                                 if( $images )
                                 {
                                     $flag = true;
+                                    $index = 1;
                                     while( have_rows('gallery') ) : the_row();
                                     $sub_value = get_sub_field('image');
                                     if($flag)
                                     {
                                         ?>
-                                            <a href="#" class="elevatezoom-gallery active" data-update=""
+                                            <a href="#" id="<?php echo "album".$index?>" class="elevatezoom-gallery active" data-update=""
                                                 data-image="<?php echo $sub_value['sizes']['thumbnail'];?>"
                                                 data-zoom-image="<?php echo $sub_value['sizes']['thumbnail'];?>">
                                                 <img src="<?php echo $sub_value['sizes']['item_239x238'];?>"
@@ -59,7 +60,7 @@ get_header();
                                         $flag = false;
                                     } else {
                                         ?>
-                                            <a href="#" class="elevatezoom-gallery" data-update=""
+                                            <a href="#" id="<?php echo "album".$index?>" class="elevatezoom-gallery" data-update=""
                                                 data-image="<?php echo $sub_value['sizes']['thumbnail'];?>"
                                                 data-zoom-image="<?php echo $sub_value['sizes']['thumbnail'];?>">
                                                 <img src="<?php echo $sub_value['sizes']['item_239x238'];?>"
@@ -67,6 +68,7 @@ get_header();
                                             </a>
                                         <?php
                                     }
+                                    $index ++;
                                     endwhile;
                                 }
                             ?>

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <?php
-	$version = 61;
+	$version = 64;
 ?>
 <html class="no-js" <?php language_attributes(); ?>>
 	<head>
 
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
-		<link rel="shortcut icon" href="http://www.example.com/myicon.ico" />
 		<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css?v=<?php echo $version?>">

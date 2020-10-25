@@ -1,5 +1,5 @@
 <!-- Load Facebook SDK for JavaScript -->
-     
+
 
 
 <!-- Modal -->
@@ -100,8 +100,10 @@
 	
 	<script>
 		$(document).ready(function(){
-			$('.slider').on('afterChange', function(event, slick, currentSlide){
-				var id = currentSlide + 1;
+			$('a.elevatezoom-gallery').click(function() { 
+				var id = $(this).attr('id');
+				id = id.replace('album','');
+				
 				var elements = document.querySelectorAll('.description-short');
 				for (var i = 0; i < elements.length; i++) {
 					elements[i].classList.remove('active-description');
@@ -167,11 +169,9 @@
 	<script type="text/javascript">
 		 $(document).ready(function () {
         	$("#zoom_03").ezPlus({
-                zoomType: "lens",
-                containLensZoom: true,
                 gallery: 'gallery_01',
-				cursor: 'pointer',
 				responsive: true,
+				scrollZoom: true,
                 galleryActiveClass: "active"
             
             });
@@ -191,15 +191,17 @@
       owl.owlCarousel({
         margin: 10,
         loop: true,
+		pagination: false,
+		dots: false,
         responsive: {
           0: {
-            items: 1
+            items: 5
           },
           600: {
-            items: 2
+            items: 4
           },
           1000: {
-            items: 3
+            items: 5
           }
         }
       })
